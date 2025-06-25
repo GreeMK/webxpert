@@ -30,12 +30,28 @@
         <h2>Nuestros Servicios</h2>
         <p>Ofrecemos soluciones a medida, optimización UX/UI, desarrollo responsive y estrategias digitales.</p>
         <div class="grid-container">
-            <div class="item">Diseño Responsivo</div>
-            <div class="item">Optimización UX/UI</div>
-            <div class="item">Estrategias Digitales</div>
-            <div class="item">Soporte Técnico</div>
+            <!-- Botón para Diseño Responsivo -->
+            <button class="item servicio-btn" data-service="responsivo">Diseño Responsivo</button>
+            <!-- Botón para Optimización UX/UI -->
+            <button class="item servicio-btn" data-service="uxui">Optimización UX/UI</button>
+            <!-- Botón para Estrategias Digitales -->
+            <button class="item servicio-btn" data-service="estrategias">Estrategias Digitales</button>
+            <!-- Botón para Soporte Técnico -->
+            <button class="item servicio-btn" data-service="soporte">Soporte Técnico</button>
         </div>
     </section>
+
+    <!-- Modal reutilizable para mostrar la descripción de cada servicio -->
+    <div id="modal-servicio" class="modal-servicio" style="display:none;">
+        <div class="modal-contenido">
+            <span class="modal-cerrar">&times;</span>
+            <h3 id="modal-titulo"></h3>
+            <p id="modal-descripcion"></p>
+        </div>
+    </div>
+
+    <!-- Incluir el script del modal de servicios -->
+    <script src="js/modal-servicios.js"></script>
 
     <footer>
         <p>© 2025 webXpert Lab | Innovación Digital</p>
