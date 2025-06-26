@@ -1,4 +1,4 @@
-@import url('./variables.css');
+@import url('../base/variables.css');
 
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
@@ -159,4 +159,24 @@ footer {
     letter-spacing: 1px;
     border-top: 2px solid var(--color-primary);
     margin-top: 40px;
+}
+
+footer a {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: var(--color-highlight);
+}
+
+/* Estilos adicionales para asegurar consistencia */
+main {
+    background: var(--color-bg-dark);
+    min-height: calc(100vh - 200px);
+}
+
+.equipo {
+    display: none; /* Ocultamos la clase antigua */
 }
