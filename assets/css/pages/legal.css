@@ -1,0 +1,232 @@
+@import url('../base/variables.css');
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: var(--color-bg-dark);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: var(--color-bg-dark);
+    color: var(--color-text);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header img {
+    max-width: 100px;
+    display: block;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    margin: 0 30px;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+nav a:hover {
+    color: var(--color-accent);
+}
+
+main {
+    min-height: 80vh;
+}
+
+.hero {
+    text-align: center;
+    padding: 60px 20px 40px 20px;
+    background: linear-gradient(45deg, var(--color-primary) 60%, var(--color-bg-dark) 100%);
+    color: var(--color-light);
+    border-radius: 0 0 30px 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+    animation: slideInUp 0.8s ease-out;
+}
+.hero h2 {
+    color: var(--color-accent);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+    animation: fadeInUp 1s ease-out 0.2s both;
+}
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+.contenido {
+    padding: 0 20px 40px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.politica-container {
+    background: var(--color-light);
+    color: var(--color-bg-dark);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.politica-container h3 {
+    color: var(--color-primary);
+    font-size: 1.4rem;
+    margin: 30px 0 15px 0;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--color-accent);
+}
+
+.politica-container h3:first-child {
+    margin-top: 0;
+}
+
+.politica-container p {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.politica-container ul {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+.politica-container li {
+    margin-bottom: 8px;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.contacto-info {
+    background: rgba(78, 35, 252, 0.05);
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    border-left: 4px solid var(--color-accent);
+}
+
+.contacto-info p {
+    margin: 8px 0;
+    font-size: 1rem;
+}
+
+.contacto-info strong {
+    color: var(--color-primary);
+}
+
+footer {
+    text-align: center;
+    padding: 18px 0;
+    background: var(--color-bg-dark);
+    color: var(--color-text);
+    font-size: 1rem;
+    letter-spacing: 1px;
+    border-top: 2px solid var(--color-primary);
+    margin-top: 40px;
+}
+footer a {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+footer a:hover {
+    color: var(--color-primary);
+}
+
+/* Animaciones */
+@keyframes slideInUp {
+    from { 
+        opacity: 0; 
+        transform: translateY(30px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+@keyframes fadeInUp {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+        margin: 0;
+    }
+    
+    .hero h2 {
+        font-size: 2rem;
+    }
+    
+    .politica-container {
+        padding: 25px;
+    }
+    
+    .politica-container h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 40px 15px 30px 15px;
+    }
+    
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .politica-container {
+        padding: 20px;
+    }
+    
+    .contenido {
+        padding: 0 15px 30px 15px;
+    }
+} 

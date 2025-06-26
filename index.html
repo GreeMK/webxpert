@@ -3,59 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>webXpert Lab</title>
-    <link rel="stylesheet" href="css/style-index.css">
+    
+    <!-- SEO Meta Tags -->
+    <title>webXpert Lab - Diseño Web Profesional, SEO y Marketing Digital</title>
+    <meta name="description" content="webXpert Lab - Servicios profesionales de diseño web, optimización SEO y gestión de redes sociales. Transformamos tu presencia digital con estrategias avanzadas.">
+    <meta name="keywords" content="diseño web, SEO, redes sociales, marketing digital, desarrollo web, optimización web, social media">
+    <meta name="author" content="webXpert Lab">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://japintos.github.io/webxpert/">
+    <meta property="og:title" content="webXpert Lab - Innovación Digital">
+    <meta property="og:description" content="Servicios profesionales de diseño web y marketing digital. Transformamos tu presencia online.">
+    <meta property="og:image" content="assets/images/logos/logo_grafico.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://japintos.github.io/webxpert/">
+    <meta property="twitter:title" content="webXpert Lab - Innovación Digital">
+    <meta property="twitter:description" content="Servicios profesionales de diseño web y marketing digital.">
+    <meta property="twitter:image" content="assets/images/logos/logo_grafico.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/logos/logo_solito.jpg">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="assets/css/base/variables.css" as="style">
+    <link rel="preload" href="assets/css/pages/home.css" as="style">
+    <link rel="preload" href="assets/images/logos/logo_solito.jpg" as="image">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/pages/home.css">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
 </head>
 <body>
     <header>
-        <img src="img/logo_solito.jpg" alt="webXpert Lab Logo" width="100">
+        <img src="assets/images/logos/logo_solito.jpg" alt="webXpert Lab Logo" width="100">
         <h1>webXpert Lab</h1>
         <nav>
             <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="nosotros.html"> Quienes Somos? </a></li>
+                <li><a href="#" aria-current="page">Inicio</a></li>
+                <li><a href="pages/nosotros.html">¿Quiénes Somos?</a></li>
+                <li><a href="pages/contacto.html">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="hero">
-        <h2>Optimización y Diseño Web a Otro Nivel</h2>
-        <p>Impulsamos tu presencia digital con estrategias avanzadas.</p>
-        <a href="/nosotros.html" class="btn-diseño">Descubre Más</a>
-    </section>
+    <main>
+        <section class="hero">
+            <h2>Optimización y Diseño Web a Otro Nivel</h2>
+            <p>Impulsamos tu presencia digital con estrategias avanzadas.</p>
+            <a href="pages/nosotros.html" class="btn-diseño" onclick="gtag('event', 'click', {'event_category': 'engagement', 'event_label': 'hero_cta'});">Descubre Más</a>
+        </section>
 
-    <section class="servicios">
-        <div class="grid-container">
-           <div class="item">
-                 <h3>Diseño Web</h3>
-                    <a href="diseno-web.html">
-                    <button class="btn-diseño">Ver Más</button>
+        <section class="servicios">
+            <h2>Nuestros Servicios</h2>
+            <div class="grid-container">
+               <div class="item">
+                     <h3>Diseño Web</h3>
+                        <a href="pages/servicios/diseno-web.html" onclick="gtag('event', 'click', {'event_category': 'engagement', 'event_label': 'servicio_diseno'});">
+                        <button class="btn-diseño">Ver Más</button>
+                        </a>
+                </div>
+
+                <div class="item">
+                    <h3>Optimización SEO</h3>
+                    <a href="pages/servicios/seo.html" onclick="gtag('event', 'click', {'event_category': 'engagement', 'event_label': 'servicio_seo'});">
+                        <button class="btn-diseño">Ver Más</button>
                     </a>
+                </div>
+                <div class="item">
+                    <h3>Redes Sociales</h3>
+                    <a href="pages/servicios/social-media.html" onclick="gtag('event', 'click', {'event_category': 'engagement', 'event_label': 'servicio_social'});">
+                        <button class="btn-diseño">Ver Más</button>
+                    </a>
+                </div>
+                <div class="item">
+                    <h3>Auditoría Web</h3>
+                    <a href="#" onclick="gtag('event', 'click', {'event_category': 'engagement', 'event_label': 'servicio_auditoria'});">
+                        <button class="btn-diseño">Próximamente</button>
+                    </a>
+                </div>
+                <div class="item">
+                    <h3>Administración de Bases de Datos</h3>
+                    <a href="pages/servicios/database-admin.html" onclick="gtag('event', 'click', {'event_category': 'engagement', 'event_label': 'servicio_database'});">
+                        <button class="btn-diseño">Ver Más</button>
+                    </a>
+                </div>
             </div>
+        </section>
 
-            <div class="item">
-                <h3>Optimización SEO</h3>
-                <a href="seo.html">
-                    <button class="btn-diseño">Ver Más</button>
-                </a>
+        <section class="testimonios">
+            <h2>Lo que dicen nuestros clientes</h2>
+            <div class="testimonios-grid">
+                <div class="testimonio">
+                    <p>"webXpert transformó completamente nuestra presencia online. El tráfico aumentó un 300% en solo 3 meses."</p>
+                    <cite>- María González, CEO TechStart</cite>
+                </div>
+                <div class="testimonio">
+                    <p>"Profesionales, puntuales y con resultados excepcionales. Recomendados 100%."</p>
+                    <cite>- Carlos Rodríguez, Emprendedor</cite>
+                </div>
             </div>
-            <div class="item">
-                <h3>Redes Sociales</h3>
-                <a href="social-media.html">
-                    <button class="btn-diseño">Ver Más</button>
-                </a>
-            </div>
-            <div class="item">
-                <h3>Auditoría Web</h3>
-                <a href="#">
-                    <button class="btn-diseño">Ver Más</button>
-                </a>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
         <p>© 2025 webXpert Lab | Innovación Digital</p>
+        <p><a href="privacidad.html">Política de Privacidad</a> | <a href="terminos.html">Términos de Servicio</a></p>
     </footer>
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/config/sw.js')
+                    .then((registration) => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch((registrationError) => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+    </script>
 </body>
 </html>

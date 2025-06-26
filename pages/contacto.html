@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Contacto - webXpert Lab | Diseño Web y Marketing Digital</title>
+    <meta name="description" content="Contacta con webXpert Lab para servicios de diseño web, SEO y marketing digital. Consulta gratuita y presupuesto personalizado.">
+    <meta name="keywords" content="contacto, consulta, presupuesto, diseño web, SEO, marketing digital">
+    <meta name="author" content="webXpert Lab">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://japintos.github.io/webxpert/pages/contacto.html">
+    <meta property="og:title" content="Contacto - webXpert Lab">
+    <meta property="og:description" content="Contacta con webXpert Lab para servicios profesionales de diseño web y marketing digital.">
+    <meta property="og:image" content="../assets/images/logos/logo_grafico.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/images/logos/logo_solito.jpg">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="../assets/css/base/variables.css" as="style">
+    <link rel="preload" href="../assets/css/pages/contact.css" as="style">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../assets/css/pages/contact.css">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+</head>
+<body>
+    <header>
+        <img src="../assets/images/logos/logo_solito.jpg" alt="webXpert Lab Logo" width="100">
+        <h1>webXpert Lab</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="nosotros.html">¿Quiénes Somos?</a></li>
+                <li><a href="contacto.html" aria-current="page">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>¿Listo para Transformar tu Presencia Digital?</h2>
+            <p>Cuéntanos sobre tu proyecto y te ayudaremos a llevarlo al siguiente nivel</p>
+        </section>
+
+        <section class="contacto-container">
+            <div class="info-contacto">
+                <h3>Información de Contacto</h3>
+                <div class="contacto-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email</h4>
+                        <p>info@webxpert.com</p>
+                    </div>
+                </div>
+                <div class="contacto-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h4>Teléfono</h4>
+                        <p>+54 9 11 1234-5678</p>
+                    </div>
+                </div>
+                <div class="contacto-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Ubicación</h4>
+                        <p>Buenos Aires, Argentina</p>
+                    </div>
+                </div>
+                <div class="contacto-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h4>Horarios</h4>
+                        <p>Lun - Vie: 9:00 - 18:00</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="formulario-container">
+                <h3>Envíanos un Mensaje</h3>
+                <form id="contacto-form" class="formulario" action="https://formspree.io/f/tu-form-id" method="POST">
+                    <div class="form-group">
+                        <label for="nombre">Nombre Completo *</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                        <span class="error-message" id="nombre-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="error-message" id="email-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="servicio">Servicio de Interés *</label>
+                        <select id="servicio" name="servicio" required>
+                            <option value="">Selecciona un servicio</option>
+                            <option value="diseno-web">Diseño Web</option>
+                            <option value="seo">Optimización SEO</option>
+                            <option value="redes-sociales">Gestión de Redes Sociales</option>
+                            <option value="auditoria">Auditoría Web</option>
+                            <option value="administracion-db">Administración de Bases de Datos</option>
+                            <option value="multiple">Múltiples Servicios</option>
+                        </select>
+                        <span class="error-message" id="servicio-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="presupuesto">Presupuesto Estimado</label>
+                        <select id="presupuesto" name="presupuesto">
+                            <option value="">Selecciona un rango</option>
+                            <option value="1000-3000">$1,000 - $3,000</option>
+                            <option value="3000-5000">$3,000 - $5,000</option>
+                            <option value="5000-10000">$5,000 - $10,000</option>
+                            <option value="10000+">Más de $10,000</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensaje">Descripción del Proyecto *</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Cuéntanos sobre tu proyecto, objetivos y cualquier detalle importante..."></textarea>
+                        <span class="error-message" id="mensaje-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="privacidad" name="privacidad" required>
+                            <span class="checkmark"></span>
+                            Acepto la <a href="../privacidad.html" target="_blank">Política de Privacidad</a> *
+                        </label>
+                        <span class="error-message" id="privacidad-error"></span>
+                    </div>
+
+                    <button type="submit" class="btn-enviar" onclick="gtag('event', 'click', {'event_category': 'engagement', 'event_label': 'form_submit'});">
+                        <span class="btn-text">Enviar Mensaje</span>
+                        <span class="btn-loading" style="display: none;">
+                            <i class="fas fa-spinner fa-spin"></i> Enviando...
+                        </span>
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 webXpert Lab | Innovación Digital</p>
+        <p><a href="../privacidad.html">Política de Privacidad</a> | <a href="../terminos.html">Términos de Servicio</a></p>
+    </footer>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- Form Validation Script -->
+    <script src="../assets/js/pages/contact.js"></script>
+</body>
+</html> 

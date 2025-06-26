@@ -1,0 +1,51 @@
+{
+  "site": {
+    "name": "webXpert Lab",
+    "description": "Servicios profesionales de diseño web, SEO y marketing digital",
+    "url": "https://japintos.github.io/webxpert",
+    "language": "es",
+    "author": "webXpert Lab",
+    "version": "1.0.0"
+  },
+  "contact": {
+    "email": "info@webxpert.com",
+    "phone": "+54 9 11 1234-5678",
+    "address": "Buenos Aires, Argentina",
+    "hours": "Lun - Vie: 9:00 - 18:00"
+  },
+  "analytics": {
+    "googleAnalytics": "GA_MEASUREMENT_ID",
+    "googleTagManager": ""
+  },
+  "social": {
+    "facebook": "",
+    "twitter": "",
+    "instagram": "",
+    "linkedin": ""
+  },
+  "services": {
+    "diseno-web": {
+      "name": "Diseño Web",
+      "url": "/pages/servicios/diseno-web.html"
+    },
+    "seo": {
+      "name": "Optimización SEO",
+      "url": "/pages/servicios/seo.html"
+    },
+    "social-media": {
+      "name": "Redes Sociales",
+      "url": "/pages/servicios/social-media.html"
+    },
+    "database-admin": {
+      "name": "Administración de Bases de Datos",
+      "url": "/pages/servicios/database-admin.html"
+    }
+  },
+  "pwa": {
+    "name": "webXpert Lab - Diseño Web y Marketing Digital",
+    "shortName": "webXpert",
+    "themeColor": "#4e23fc",
+    "backgroundColor": "#0a0021",
+    "display": "standalone"
+  }
+} 
