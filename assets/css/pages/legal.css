@@ -1,12 +1,18 @@
 @import url('../base/variables.css');
 
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: var(--font-main);
     margin: 0;
     padding: 0;
-    background: var(--color-bg-dark);
+    background: var(--color-bg);
     color: var(--color-text);
-    line-height: 1.6;
+    transition: background 0.3s, color 0.3s;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-title);
+    color: var(--color-primary);
+    margin-top: 0;
 }
 
 header {
@@ -14,8 +20,8 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 20px 40px;
-    background: var(--color-bg-dark);
-    color: var(--color-text);
+    background: var(--color-primary-dark);
+    color: var(--color-text-light);
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     position: sticky;
     top: 0;
@@ -35,21 +41,21 @@ header h1 {
 }
 
 nav ul {
-    list-style: none;
     display: flex;
-    gap: 25px;
-    margin: 0;
+    justify-content: center;
+    gap: 2em;
+    list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 nav a {
+    color: var(--color-text-light);
     text-decoration: none;
-    color: var(--color-text);
     font-weight: 600;
-    font-size: 1.1rem;
-    transition: color 0.3s;
+    transition: color 0.2s;
 }
-nav a:hover {
+nav a:hover, nav a:focus {
     color: var(--color-accent);
 }
 
@@ -58,14 +64,14 @@ main {
 }
 
 .hero {
+    padding: 3em 1em 2em 1em;
     text-align: center;
-    padding: 60px 20px 40px 20px;
-    background: linear-gradient(45deg, var(--color-primary) 60%, var(--color-bg-dark) 100%);
-    color: var(--color-light);
-    border-radius: 0 0 30px 30px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-    animation: slideInUp 0.8s ease-out;
+    background: linear-gradient(120deg, var(--color-primary) 60%, var(--color-secondary) 100%);
+    color: var(--color-text-light);
+    border-radius: 0 0 2em 2em;
+    box-shadow: 0 4px 24px rgba(78,35,252,0.10);
+    margin-bottom: 2em;
+    animation: fadeInDown 1s;
 }
 .hero h2 {
     color: var(--color-accent);
@@ -87,12 +93,13 @@ main {
 }
 
 .politica-container {
-    background: var(--color-light);
-    color: var(--color-bg-dark);
-    padding: 40px;
-    border-radius: 16px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-    animation: fadeInUp 0.8s ease-out;
+    background: #fff;
+    border-radius: 1em;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    padding: 2em 1.5em;
+    margin: 2em auto;
+    max-width: 900px;
+    animation: fadeInUp 1s;
 }
 
 .politica-container h3 {
@@ -144,8 +151,8 @@ main {
 footer {
     text-align: center;
     padding: 18px 0;
-    background: var(--color-bg-dark);
-    color: var(--color-text);
+    background: var(--color-primary-dark);
+    color: var(--color-text-light);
     font-size: 1rem;
     letter-spacing: 1px;
     border-top: 2px solid var(--color-primary);
@@ -158,6 +165,87 @@ footer a {
 }
 footer a:hover {
     color: var(--color-primary);
+}
+
+/* HERO SVG */
+.hero-svg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5em;
+}
+
+.section-icon {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 0.5em;
+    vertical-align: middle;
+}
+
+.icon-list {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+.icon-list li {
+    position: relative;
+    padding-left: 2em;
+    margin-bottom: 0.7em;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+.icon-list li:before {
+    content: '';
+    position: absolute;
+    left: 0.2em;
+    top: 0.2em;
+    width: 1.3em;
+    height: 1.3em;
+    background: url('data:image/svg+xml;utf8,<svg fill="%236c3cff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-5" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg>') no-repeat center/contain;
+}
+
+.visual-contacto {
+    background: linear-gradient(120deg, #f5f3fa 60%, #e3e0f7 100%);
+    border-left: 6px solid var(--color-primary);
+    box-shadow: 0 2px 12px rgba(78,35,252,0.08);
+    padding: 1.5em 1.2em;
+    margin-top: 1.5em;
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7em;
+}
+.info-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(78,35,252,0.08);
+    width: 1.7em;
+    height: 1.7em;
+    margin-right: 0.5em;
+}
+
+footer > div {
+    margin-bottom: 0.5em;
+}
+footer a svg {
+    vertical-align: middle;
+    transition: transform 0.2s;
+}
+footer a:hover svg {
+    transform: scale(1.13);
+    filter: brightness(1.2);
+}
+
+/* Contraste seguro para .visual-contacto y .info-icon SOLO en legales */
+.visual-contacto, .visual-contacto p, .visual-contacto strong {
+    color: var(--color-text-dark);
+}
+.visual-contacto .info-icon svg {
+    color: var(--color-primary-dark);
+    fill: currentColor;
 }
 
 /* Animaciones */
@@ -181,6 +269,11 @@ footer a:hover {
         opacity: 1; 
         transform: translateY(0); 
     }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-40px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Responsive Design */
@@ -228,5 +321,44 @@ footer a:hover {
     
     .contenido {
         padding: 0 15px 30px 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero { padding: 2em 0.5em 1.5em 0.5em; }
+    .politica-container { padding: 1.2em 0.7em; }
+    .hero-svg { max-width: 80px; }
+    .visual-contacto { padding: 1em 0.5em; }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: var(--color-bg-dark);
+        color: var(--color-text-light);
+    }
+    .politica-container {
+        background: #23272f;
+        color: var(--color-text-light);
+    }
+    .hero {
+        background: linear-gradient(120deg, var(--color-primary-dark) 60%, var(--color-secondary) 100%);
+        color: var(--color-text-light);
+    }
+    header, footer {
+        background: #181a1b;
+        color: var(--color-text-light);
+    }
+    nav a {
+        color: var(--color-text-light);
+    }
+    nav a:hover, nav a:focus {
+        color: var(--color-accent);
+    }
+    .visual-contacto, .visual-contacto p, .visual-contacto strong {
+        color: var(--color-text-light);
+    }
+    .visual-contacto .info-icon svg {
+        color: var(--color-text-light);
+        fill: currentColor;
     }
 } 
