@@ -1,10 +1,10 @@
-# 🚀 webXpert Lab - Sitio Web Profesional
+# 🚀 webXpert - Sitio Web Profesional
 
 **Sitio web corporativo para servicios de diseño web, SEO, marketing digital y administración de bases de datos.**
 
 ## 📋 Descripción
 
-webXpert Lab es una agencia digital que ofrece servicios profesionales de:
+webXpert es una agencia digital que ofrece servicios profesionales de:
 - 🎨 **Diseño Web** - Sitios web modernos y responsivos
 - 🔍 **SEO** - Optimización para motores de búsqueda
 - 📱 **Redes Sociales** - Gestión de presencia en redes sociales
@@ -207,13 +207,13 @@ El sitio incluye Google Analytics para:
 
 ## 📞 Contacto
 
-- **Email:** info@webxpert.com
-- **Teléfono:** +54 9 11 1234-5678
-- **Ubicación:** Buenos Aires, Argentina
+- **Email:** julioapintos1@gmail.com
+- **Teléfono:** +54 9 3764724207
+- **Ubicación:** Posadas, Misiones, Argentina
 
 ## 📄 Licencia
 
-Este proyecto es propiedad de webXpert Lab. Todos los derechos reservados.
+Este proyecto es propiedad de webXpert. Todos los derechos reservados.
 
 ## 🤝 Contribuciones
 
@@ -237,4 +237,24 @@ Para contribuir al proyecto:
 
 ---
 
-**Desarrollado con ❤️ por webXpert Lab** 
+**Desarrollado con ❤️ por webXpert**
+
+## Archivos de configuración
+
+Asegúrate de que los siguientes archivos estén en la raíz del proyecto para un funcionamiento óptimo:
+
+- `sitemap.xml`
+- `robots.txt`
+- `sw.js`
+- `manifest.json`
+
+## Accesibilidad
+- Todas las imágenes deben tener atributos `alt` descriptivos.
+- Los colores deben cumplir con los estándares de contraste WCAG.
+
+## SEO
+- Cada página debe tener etiquetas `<title>` y `<meta name="description">` únicas y descriptivas.
+- Agrega etiquetas Open Graph si es posible.
+
+## Cookies y RGPD
+- Si usas Google Analytics o cookies, incluye un aviso de cookies y solicita consentimiento al usuario. 

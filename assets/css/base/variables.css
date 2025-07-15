@@ -1,10 +1,29 @@
+/* Paleta de colores para look dark + violeta + naranja fuerte */
 :root {
-  --color-bg-dark: #0a0021;
-  --color-primary: #4e23fc;
-  --color-accent: #ff5733;
-  --color-light: #f5eeec;
-  --color-text: #ffffff;
-  --color-highlight: #ffea00;
-  --color-secondary-bg: #804b4b;
-  --color-secondary-text: #dec2bc;
+  --color-primary: #ff5722; /* Naranja fuerte para botones y títulos */
+  --color-primary-dark: #e64a19; /* Naranja más oscuro para hover */
+  --color-secondary: #6c3cff; /* Violeta para hero y textos secundarios */
+  --color-accent: #ff9800; /* Naranja acento (opcional) */
+  --color-bg: #14002b; /* Fondo general muy oscuro */
+  --color-bg-dark: #0a001a; /* Fondo aún más oscuro para header/footer */
+  --color-bg-card: #f5f3fa; /* Fondo claro para cards */
+  --color-text: #fff; /* Blanco para textos generales */
+  --color-text-dark: #14002b; /* Oscuro para textos sobre fondo claro */
+  --color-text-secondary: #6c3cff; /* Violeta para títulos en cards */
+  --color-text-light: #fff; /* Blanco para textos en botones */
+  --color-success: #27ae60;
+  --color-error: #e74c3c;
+  --color-border: #2d145a;
+
+  /* Tipografía */
+  --font-main: 'Inter', 'Segoe UI', Arial, sans-serif;
+  --font-title: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: var(--color-bg-dark);
+    --color-text: var(--color-text-light);
+    --color-border: #333;
+  }
 } 

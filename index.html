@@ -5,23 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO Meta Tags -->
-    <title>webXpert Lab - Diseño Web Profesional, SEO y Marketing Digital</title>
-    <meta name="description" content="webXpert Lab - Servicios profesionales de diseño web, optimización SEO y gestión de redes sociales. Transformamos tu presencia digital con estrategias avanzadas.">
+    <title>webXpert - Diseño Web Profesional, SEO y Marketing Digital</title>
+    <meta name="description" content="webXpert - Servicios profesionales de diseño web, optimización SEO y gestión de redes sociales. Transformamos tu presencia digital con estrategias avanzadas.">
     <meta name="keywords" content="diseño web, SEO, redes sociales, marketing digital, desarrollo web, optimización web, social media">
-    <meta name="author" content="webXpert Lab">
+    <meta name="author" content="webXpert">
     <meta name="robots" content="index, follow">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://japintos.github.io/webxpert/">
-    <meta property="og:title" content="webXpert Lab - Innovación Digital">
+    <meta property="og:title" content="webXpert - Innovación Digital">
     <meta property="og:description" content="Servicios profesionales de diseño web y marketing digital. Transformamos tu presencia online.">
     <meta property="og:image" content="assets/images/logos/logo_grafico.jpg">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://japintos.github.io/webxpert/">
-    <meta property="twitter:title" content="webXpert Lab - Innovación Digital">
+    <meta property="twitter:title" content="webXpert - Innovación Digital">
     <meta property="twitter:description" content="Servicios profesionales de diseño web y marketing digital.">
     <meta property="twitter:image" content="assets/images/logos/logo_grafico.jpg">
     
@@ -44,12 +44,41 @@
         gtag('js', new Date());
         gtag('config', 'GA_MEASUREMENT_ID');
     </script>
+
+    <!-- Manifest PWA -->
+    <link rel="manifest" href="/manifest.json">
+    <!-- Robots y Sitemap -->
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+    <meta name="theme-color" content="#4e23fc">
+    <meta name="color-scheme" content="light dark">
+    <!-- Datos estructurados JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "webXpert",
+      "url": "https://japintos.github.io/webxpert/",
+      "logo": "assets/images/logos/logo_solito.jpg",
+      "contactPoint": [{
+        "@type": "ContactPoint",
+        "telephone": "+54 9 3764724207",
+        "contactType": "customer service",
+        "areaServed": "AR",
+        "availableLanguage": ["Spanish"]
+      }],
+      "sameAs": [
+        "https://www.facebook.com/julioapintos",
+        "https://www.instagram.com/julioapintos/",
+        "https://www.linkedin.com/in/julio-pintos-0638a8200/"
+      ]
+    }
+    </script>
 </head>
 <body>
-    <header>
-        <img src="assets/images/logos/logo_solito.jpg" alt="webXpert Lab Logo" width="100">
-        <h1>webXpert Lab</h1>
-        <nav>
+    <header role="banner">
+        <img src="assets/images/logos/logo_solito.jpg" alt="webXpert Logo" width="100">
+        <h1>webXpert</h1>
+        <nav role="navigation" aria-label="Navegación principal">
             <ul>
                 <li><a href="#" aria-current="page">Inicio</a></li>
                 <li><a href="pages/nosotros.html">¿Quiénes Somos?</a></li>
@@ -62,7 +91,10 @@
         <section class="hero">
             <h2>Optimización y Diseño Web a Otro Nivel</h2>
             <p>Impulsamos tu presencia digital con estrategias avanzadas.</p>
-            <a href="pages/nosotros.html" class="btn-diseño" onclick="gtag('event', 'click', {'event_category': 'engagement', 'event_label': 'hero_cta'});">Descubre Más</a>
+            <a href="pages/nosotros.html" class="btn-diseño" onclick="gtag('event', 'click', {'event_category': 'engagement', 'event_label': 'hero_cta'});">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:0.5em;"><path d="M12 4l1.41 1.41L7.83 11H20v2H7.83l5.58 5.59L12 20l-8-8z"/></svg>
+                Descubre Más
+            </a>
         </section>
 
         <section class="servicios">
@@ -70,33 +102,48 @@
             <div class="grid-container">
                <div class="item">
                      <h3>Diseño Web</h3>
-                        <a href="pages/servicios/diseno-web.html" onclick="gtag('event', 'click', {'event_category': 'engagement', 'event_label': 'servicio_diseno'});">
-                        <button class="btn-diseño">Ver Más</button>
+                        <a href="pages/servicios/diseno-web.html">
+                        <button class="btn-diseño">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:0.5em;"><path d="M12 4l1.41 1.41L7.83 11H20v2H7.83l5.58 5.59L12 20l-8-8z"/></svg>
+                            Ver Más
+                        </button>
                         </a>
                 </div>
 
                 <div class="item">
                     <h3>Optimización SEO</h3>
-                    <a href="pages/servicios/seo.html" onclick="gtag('event', 'click', {'event_category': 'engagement', 'event_label': 'servicio_seo'});">
-                        <button class="btn-diseño">Ver Más</button>
+                    <a href="pages/servicios/seo.html">
+                        <button class="btn-diseño">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:0.5em;"><path d="M12 4l1.41 1.41L7.83 11H20v2H7.83l5.58 5.59L12 20l-8-8z"/></svg>
+                            Ver Más
+                        </button>
                     </a>
                 </div>
                 <div class="item">
                     <h3>Redes Sociales</h3>
-                    <a href="pages/servicios/social-media.html" onclick="gtag('event', 'click', {'event_category': 'engagement', 'event_label': 'servicio_social'});">
-                        <button class="btn-diseño">Ver Más</button>
+                    <a href="pages/servicios/social-media.html">
+                        <button class="btn-diseño">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:0.5em;"><path d="M12 4l1.41 1.41L7.83 11H20v2H7.83l5.58 5.59L12 20l-8-8z"/></svg>
+                            Ver Más
+                        </button>
                     </a>
                 </div>
                 <div class="item">
                     <h3>Auditoría Web</h3>
-                    <a href="#" onclick="gtag('event', 'click', {'event_category': 'engagement', 'event_label': 'servicio_auditoria'});">
-                        <button class="btn-diseño">Próximamente</button>
+                    <a href="#">
+                        <button class="btn-diseño">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:0.5em;"><path d="M12 4l1.41 1.41L7.83 11H20v2H7.83l5.58 5.59L12 20l-8-8z"/></svg>
+                            Próximamente
+                        </button>
                     </a>
                 </div>
                 <div class="item">
                     <h3>Administración de Bases de Datos</h3>
-                    <a href="pages/servicios/database-admin.html" onclick="gtag('event', 'click', {'event_category': 'engagement', 'event_label': 'servicio_database'});">
-                        <button class="btn-diseño">Ver Más</button>
+                    <a href="pages/servicios/database-admin.html">
+                        <button class="btn-diseño">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:0.5em;"><path d="M12 4l1.41 1.41L7.83 11H20v2H7.83l5.58 5.59L12 20l-8-8z"/></svg>
+                            Ver Más
+                        </button>
                     </a>
                 </div>
             </div>
@@ -117,8 +164,21 @@
         </section>
     </main>
 
-    <footer>
-        <p>© 2025 webXpert Lab | Innovación Digital</p>
+    <footer role="contentinfo">
+        <p>© 2025 webXpert | Innovación Digital</p>
+        <p>Contacto: <a href="mailto:julioapintos1@gmail.com">julioapintos1@gmail.com</a> | <a href="tel:+543764724207">+54 9 3764724207</a></p>
+        <p>Redes: 
+            <a href="https://www.facebook.com/julioapintos" target="_blank" aria-label="Facebook">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;"><path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.326 24H12.82v-9.294H9.692v-3.622h3.127V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0"/></svg>
+            </a> |
+            <a href="https://www.instagram.com/julioapintos/" target="_blank" aria-label="Instagram">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.974.974 1.246 2.241 1.308 3.608.058 1.266.069 1.646.069 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.974-2.241 1.246-3.608 1.308-1.266.058-1.646.069-4.85.069s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.974-.974-1.246-2.241-1.308-3.608C2.175 15.647 2.163 15.267 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608C4.515 2.497 5.782 2.225 7.148 2.163 8.414 2.105 8.794 2.163 12 2.163zm0-2.163C8.741 0 8.332.012 7.052.07 5.771.128 4.659.334 3.678 1.315c-.98.98-1.187 2.092-1.245 3.373C2.012 5.668 2 6.077 2 12c0 5.923.012 6.332.07 7.612.058 1.281.265 2.393 1.245 3.373.98.98 2.092 1.187 3.373 1.245C8.332 23.988 8.741 24 12 24s3.668-.012 4.948-.07c1.281-.058 2.393-.265 3.373-1.245.98-.98 1.187-2.092 1.245-3.373.058-1.28.07-1.689.07-7.612 0-5.923-.012-6.332-.07-7.612-.058-1.281-.265-2.393-1.245-3.373-.98-.98-2.092-1.187-3.373-1.245C15.668.012 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-11.845a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg>
+            </a> |
+            <a href="https://www.linkedin.com/in/julio-pintos-0638a8200/" target="_blank" aria-label="LinkedIn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.968v5.699h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg>
+            </a>
+        </p>
+        <p>Ubicación: POSADAS MISIONES</p>
         <p><a href="privacidad.html">Política de Privacidad</a> | <a href="terminos.html">Términos de Servicio</a></p>
     </footer>
 
@@ -126,7 +186,7 @@
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/config/sw.js')
+                navigator.serviceWorker.register('/sw.js')
                     .then((registration) => {
                         console.log('SW registered: ', registration);
                     })
@@ -135,6 +195,22 @@
                     });
             });
         }
+    </script>
+
+    <!-- Accesibilidad: Recuerda que todas las imágenes deben tener alt descriptivo y los colores cumplir contraste WCAG -->
+    <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;width:100%;background:#222;color:#fff;padding:1em;text-align:center;z-index:9999;">
+      Este sitio utiliza cookies para mejorar la experiencia. <a href="privacidad.html" style="color:#ff9800;text-decoration:underline;margin:0 0.5em;">Política de Cookies</a> <button id="accept-cookies" style="margin-left:1em;padding:0.5em 1.2em;background:var(--color-primary);color:#fff;border:none;border-radius:4px;cursor:pointer;">Aceptar</button>
+    </div>
+    <script>
+      window.addEventListener('DOMContentLoaded', function() {
+        if (!localStorage.getItem('cookiesAccepted')) {
+          document.getElementById('cookie-banner').style.display = 'block';
+        }
+        document.getElementById('accept-cookies').onclick = function() {
+          localStorage.setItem('cookiesAccepted', 'true');
+          document.getElementById('cookie-banner').style.display = 'none';
+        };
+      });
     </script>
 </body>
 </html>

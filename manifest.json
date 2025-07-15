@@ -1,5 +1,5 @@
 {
-  "name": "webXpert Lab - Diseño Web y Marketing Digital",
+  "name": "webXpert - Diseño Web y Marketing Digital",
   "short_name": "webXpert",
   "description": "Servicios profesionales de diseño web, SEO y gestión de redes sociales. Transformamos tu presencia digital.",
   "start_url": "/",
@@ -31,14 +31,14 @@
       "sizes": "1280x720",
       "type": "image/png",
       "form_factor": "wide",
-      "label": "Página principal de webXpert Lab"
+      "label": "Página principal de webXpert"
     }
   ],
   "shortcuts": [
     {
       "name": "Contacto",
       "short_name": "Contacto",
-      "description": "Contacta con webXpert Lab",
+      "description": "Contacta con webXpert",
       "url": "/pages/contacto.html",
       "icons": [
         {

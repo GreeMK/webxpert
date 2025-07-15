@@ -182,7 +182,11 @@ document.addEventListener('DOMContentLoaded', function() {
         // Crear nuevo mensaje
         const messageDiv = document.createElement('div');
         messageDiv.className = type === 'success' ? 'mensaje-exito' : 'mensaje-error';
-        messageDiv.textContent = message;
+        if (type === 'success') {
+            messageDiv.innerHTML = `<svg width='18' height='18' viewBox='0 0 24 24' fill='none' style='vertical-align:middle;margin-right:0.5em;'><circle cx='12' cy='12' r='12' fill='#27ae60'/><path d='M7 13l3 3 7-7' stroke='#fff' stroke-width='2' fill='none'/></svg>` + message;
+        } else {
+            messageDiv.innerHTML = `<svg width='18' height='18' viewBox='0 0 24 24' fill='none' style='vertical-align:middle;margin-right:0.5em;'><circle cx='12' cy='12' r='12' fill='#e74c3c'/><path d='M8 8l8 8M16 8l-8 8' stroke='#fff' stroke-width='2' fill='none'/></svg>` + message;
+        }
 
         // Insertar antes del formulario
         const formContainer = document.querySelector('.formulario-container');

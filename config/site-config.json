@@ -1,17 +1,21 @@
 {
   "site": {
-    "name": "webXpert Lab",
+    "name": "webXpert",
     "description": "Servicios profesionales de diseño web, SEO y marketing digital",
     "url": "https://japintos.github.io/webxpert",
     "language": "es",
-    "author": "webXpert Lab",
+    "author": "webXpert",
     "version": "1.0.0"
   },
   "contact": {
-    "email": "info@webxpert.com",
-    "phone": "+54 9 11 1234-5678",
-    "address": "Buenos Aires, Argentina",
-    "hours": "Lun - Vie: 9:00 - 18:00"
+    "email": "julioapintos1@gmail.com",
+    "phone": "3764724207",
+    "address": " Posadas, Misiones, Argentina",
+    "hours": "Lun - Vie: 9:00 - 18:00",
+    "facebook": "https://www.facebook.com/julioapintos",
+    "linkedin": "https://www.linkedin.com/in/julio-pintos-0638a8200/",
+    "instagram": "https://www.instagram.com/julioapintos/",
+    "location": "POSADAS MISIONES"
   },
   "analytics": {
     "googleAnalytics": "GA_MEASUREMENT_ID",
@@ -42,7 +46,7 @@
     }
   },
   "pwa": {
-    "name": "webXpert Lab - Diseño Web y Marketing Digital",
+    "name": "webXpert - Diseño Web y Marketing Digital",
     "shortName": "webXpert",
     "themeColor": "#4e23fc",
     "backgroundColor": "#0a0021",

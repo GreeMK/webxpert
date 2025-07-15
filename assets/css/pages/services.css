@@ -2,11 +2,18 @@
 
 /* Estilos generales */
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: var(--font-main);
     margin: 0;
     padding: 0;
-    background: var(--color-bg-dark);
+    background: var(--color-bg);
     color: var(--color-text);
+    transition: background 0.3s, color 0.3s;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-title);
+    color: var(--color-primary);
+    margin-top: 0;
 }
 
 /* Estilos del header */
@@ -33,66 +40,70 @@ header h1 {
 }
 
 nav ul {
-    list-style: none;
     display: flex;
-    gap: 25px;
-    margin: 0;
+    justify-content: center;
+    gap: 2em;
+    list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 nav a {
-    text-decoration: none;
     color: var(--color-text);
+    text-decoration: none;
     font-weight: 600;
-    font-size: 1.1rem;
-    transition: color 0.3s;
+    transition: color 0.2s;
 }
-nav a:hover {
-    color: var(--color-accent);
+
+nav a[aria-current="page"]::after {
+    background: var(--color-primary);
+}
+
+nav a:hover, nav a:focus {
+    color: var(--color-primary);
 }
 
 /* Estilos de la sección Hero */
 .hero {
+    padding: 3em 1em 2em 1em;
     text-align: center;
-    padding: 60px 20px 40px 20px;
-    background: linear-gradient(45deg, var(--color-primary) 60%, var(--color-bg-dark) 100%);
-    color: var(--color-light);
-    border-radius: 0 0 30px 30px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-    animation: fadeIn 1.5s ease-in-out;
+    background: linear-gradient(120deg, #6c3cff 60%, #3a1aff 100%);
+    color: var(--color-text);
+    border-radius: 0 0 2em 2em;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    margin-bottom: 2em;
+    animation: fadeInDown 1s;
 }
 
 .hero h2 {
-    color: var(--color-accent);
-    font-size: 2.5rem;
+    color: var(--color-primary);
+    font-size: 3rem;
     margin-bottom: 10px;
-    font-weight: 700;
+    font-weight: 800;
 }
 
 .hero p {
+    color: var(--color-text);
     font-size: 1.2rem;
     margin-bottom: 25px;
 }
 
-.hero button {
-    background: var(--color-accent);
-    color: var(--color-text);
-    font-size: 1rem;
-    padding: 12px 28px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
+.btn-diseño, button {
+    background: var(--color-primary);
+    color: var(--color-text-light);
+    font-size: 1.2em;
     font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    padding: 0.7em 2em;
+    margin: 18px 0 0 0;
     box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-    transition: transform 0.3s, background 0.4s;
-    margin: 10px 0;
+    transition: background 0.2s, transform 0.2s;
 }
 
-.hero button:hover {
-    transform: scale(1.07);
-    background: var(--color-primary);
-    color: var(--color-light);
+.btn-diseño:hover, button:hover {
+    background: var(--color-primary-dark);
+    color: var(--color-text-light);
 }
 
 /* Estilos de la sección contenido */
@@ -100,7 +111,7 @@ nav a:hover {
     text-align: center;
     padding: 50px 20px;
     background: var(--color-bg-dark);
-    color: var(--color-light);
+    color: var(--color-text);
     border-radius: 20px;
     margin: 0 20px 30px 20px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.08);
@@ -141,9 +152,44 @@ nav a:hover {
 }
 
 /* Animaciones */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+    .hero { padding: 2em 0.5em 1.5em 0.5em; }
+    .servicios-detalle, .servicios-grid, .servicio-card { padding: 1.2em 0.7em; }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: var(--color-bg-dark);
+        color: var(--color-text-light);
+    }
+    .servicios-detalle, .servicios-grid, .servicio-card {
+        background: #23272f;
+        color: var(--color-text-light);
+    }
+    .hero {
+        background: linear-gradient(120deg, var(--color-primary-dark) 60%, var(--color-secondary) 100%);
+        color: var(--color-text-light);
+    }
+    header, footer {
+        background: #181a1b;
+        color: var(--color-text-light);
+    }
+    nav a {
+        color: var(--color-text-light);
+    }
+    nav a:hover, nav a:focus {
+        color: var(--color-accent);
+    }
 }
 
 /* Estilos del footer */
@@ -156,6 +202,16 @@ footer {
     letter-spacing: 1px;
     border-top: 2px solid var(--color-primary);
     margin-top: 40px;
+}
+
+footer a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: var(--color-accent);
 }
 
 /* =====================
@@ -207,4 +263,366 @@ footer {
 @keyframes modalFadeIn {
     from { opacity: 0; transform: scale(0.95); }
     to { opacity: 1; transform: scale(1); }
+}
+
+.servicios-detalle, .servicios-grid, .servicio-card, .planes-grid, .plan-card, .beneficios-grid, .beneficio, .proceso-grid, .paso {
+    background: var(--color-bg-card);
+    color: var(--color-text-dark);
+}
+
+.servicio-card h3, .plan-card h3, .beneficio h4, .paso h4 {
+    color: var(--color-text-secondary);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.servicios h2 {
+    color: var(--color-primary);
+    font-size: 2.8rem;
+    font-weight: 800;
+    text-align: center;
+}
+
+.beneficios {
+    padding: 60px 20px 40px 20px;
+    background: var(--color-bg);
+    text-align: center;
+}
+.beneficios h2 {
+    color: var(--color-primary);
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    font-weight: 800;
+}
+.beneficios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2.5em;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+/* BENEFICIOS CARDS */
+.beneficio-card {
+    background: var(--color-bg-card);
+    color: var(--color-text-dark);
+    border-radius: 1.2em;
+    box-shadow: 0 4px 18px rgba(78,35,252,0.10);
+    padding: 2.2em 1.5em 1.5em 1.5em;
+    text-align: center;
+    transition: box-shadow 0.2s, transform 0.2s;
+    animation: fadeInUp 1s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.beneficio-card:hover {
+    box-shadow: 0 8px 32px rgba(78,35,252,0.16);
+    transform: translateY(-4px) scale(1.03);
+}
+.beneficio-card svg {
+    margin-bottom: 1em;
+    color: var(--color-primary);
+}
+.beneficio-card h3 {
+    color: var(--color-primary);
+    font-size: 1.3rem;
+    margin-bottom: 0.5em;
+    font-weight: 700;
+}
+.beneficio-card p {
+    font-size: 1rem;
+    color: var(--color-text-dark);
+}
+
+.servicios {
+    padding: 60px 20px 40px 20px;
+    background: var(--color-bg-dark);
+    text-align: center;
+}
+.servicios h2 {
+    color: var(--color-primary);
+    font-size: 2.3rem;
+    margin-bottom: 35px;
+    font-weight: 800;
+}
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2.5em;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.servicio-card {
+    background: var(--color-bg-card);
+    color: var(--color-text-dark);
+    border-radius: 1.2em;
+    box-shadow: 0 4px 18px rgba(78,35,252,0.10);
+    padding: 2.2em 1.5em 1.5em 1.5em;
+    text-align: center;
+    transition: box-shadow 0.2s, transform 0.2s;
+    animation: fadeInUp 1s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.servicio-card svg {
+    margin-bottom: 1em;
+    color: var(--color-primary);
+}
+.servicio-card h3 {
+    color: var(--color-primary);
+    font-size: 1.2rem;
+    margin-bottom: 0.5em;
+    font-weight: 700;
+}
+.servicio-card p {
+    font-size: 1rem;
+    color: var(--color-text-dark);
+    margin-bottom: 1.2em;
+}
+.servicio-card .btn-diseño {
+    margin-top: auto;
+    width: 100%;
+}
+
+.planes {
+    padding: 60px 20px 40px 20px;
+    background: var(--color-bg);
+    text-align: center;
+}
+.planes h2 {
+    color: var(--color-primary);
+    font-size: 2.3rem;
+    margin-bottom: 35px;
+    font-weight: 800;
+}
+.planes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2.5em;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.plan-card {
+    background: var(--color-bg-card);
+    color: var(--color-text-dark);
+    border-radius: 1.2em;
+    box-shadow: 0 4px 18px rgba(78,35,252,0.10);
+    padding: 2.2em 1.5em 1.5em 1.5em;
+    text-align: center;
+    transition: box-shadow 0.2s, transform 0.2s;
+    animation: fadeInUp 1s;
+    border: 2px solid transparent;
+    position: relative;
+}
+.plan-card.recomendado {
+    border: 2.5px solid var(--color-primary);
+    box-shadow: 0 8px 32px rgba(255,87,34,0.13);
+}
+.plan-card h3 {
+    color: var(--color-primary);
+    font-size: 1.3rem;
+    margin-bottom: 0.5em;
+    font-weight: 700;
+}
+.plan-card .precio {
+    font-size: 2rem;
+    color: var(--color-primary-dark);
+    margin-bottom: 1em;
+    font-weight: 800;
+}
+.plan-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.2em;
+}
+.plan-card ul li {
+    font-size: 1rem;
+    margin-bottom: 0.7em;
+    color: var(--color-text-dark);
+    position: relative;
+    padding-left: 1.2em;
+}
+.plan-card ul li:before {
+    content: '\2022';
+    color: var(--color-primary);
+    position: absolute;
+    left: 0;
+    font-size: 1.2em;
+    top: 0.1em;
+}
+.plan-card .btn-diseño {
+    width: 100%;
+    margin-top: 1em;
+}
+
+/* CTA FINAL */
+.cta-final {
+    padding: 60px 20px 60px 20px;
+    background: var(--color-bg-dark);
+    text-align: center;
+    border-radius: 2em;
+    margin: 3em auto 2em auto;
+    max-width: 700px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+}
+.cta-final h2 {
+    color: var(--color-primary);
+    font-size: 2.2rem;
+    margin-bottom: 1.2em;
+    font-weight: 800;
+}
+.cta-btn {
+    background: linear-gradient(90deg, var(--color-primary) 60%, var(--color-secondary) 100%);
+    color: var(--color-text-light);
+    font-size: 1.2em;
+    font-weight: 700;
+    border-radius: 8px;
+    border: none;
+    padding: 0.9em 2.5em;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    transition: background 0.2s, transform 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+}
+.cta-btn:hover {
+    background: linear-gradient(90deg, var(--color-primary-dark) 60%, var(--color-secondary) 100%);
+    transform: scale(1.04);
+}
+
+@media (max-width: 900px) {
+    .beneficios-grid, .servicios-grid, .proceso-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5em;
+    }
+    .cta-final {
+        padding: 40px 10px 40px 10px;
+    }
+}
+@media (max-width: 600px) {
+    .hero-content img {
+        max-width: 320px;
+        width: 100%;
+        margin: 2em auto 1em auto;
+        display: block;
+    }
+    .beneficios, .servicios, .proceso {
+        padding: 30px 5px 20px 5px;
+    }
+    .cta-final {
+        padding: 25px 5px 25px 5px;
+    }
+}
+
+/* PROCESO */
+.proceso {
+    padding: 60px 20px 40px 20px;
+    background: var(--color-bg);
+    text-align: center;
+}
+.proceso h2 {
+    color: var(--color-primary);
+    font-size: 2.3rem;
+    margin-bottom: 35px;
+    font-weight: 800;
+}
+.proceso-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2.5em;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.paso-card {
+    background: var(--color-bg-card);
+    color: var(--color-text-dark);
+    border-radius: 1.2em;
+    box-shadow: 0 4px 18px rgba(78,35,252,0.10);
+    padding: 2.2em 1.5em 1.5em 1.5em;
+    text-align: center;
+    transition: box-shadow 0.2s, transform 0.2s;
+    animation: fadeInUp 1s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.paso-card:hover {
+    box-shadow: 0 8px 32px rgba(78,35,252,0.16);
+    transform: translateY(-4px) scale(1.03);
+}
+.paso-numero {
+    background: var(--color-primary);
+    color: var(--color-text-light);
+    font-size: 1.3rem;
+    font-weight: 700;
+    border-radius: 50%;
+    width: 2.5em;
+    height: 2.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1em auto;
+    box-shadow: 0 2px 8px rgba(78,35,252,0.10);
+}
+.paso-card h4 {
+    color: var(--color-primary);
+    font-size: 1.1rem;
+    margin-bottom: 0.5em;
+    font-weight: 700;
+}
+.paso-card p {
+    font-size: 1rem;
+    color: var(--color-text-dark);
+}
+@media (max-width: 900px) {
+    .proceso-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5em;
+    }
+}
+@media (max-width: 600px) {
+    .proceso {
+        padding: 30px 5px 20px 5px;
+    }
+}
+
+/* Ajuste grilla para 2x2 en servicios de base de datos */
+.servicios-grid.servicios-bd {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5em;
+    max-width: 900px;
+    margin: 0 auto;
+}
+@media (max-width: 900px) {
+    .servicios-grid.servicios-bd {
+        grid-template-columns: 1fr;
+        gap: 1.5em;
+    }
+}
+
+/* Ajuste títulos SVG de tecnologías */
+.servicio-card .tech-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    fill: #ff5722;
+    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+    dominant-baseline: middle;
+}
+
+/* Quitar borde de SVGs de tecnología */
+.servicio-card .tech-svg ellipse,
+.servicio-card .tech-svg rect,
+.servicio-card .tech-svg circle {
+    stroke: none !important;
+}
+
+/* Ajuste para que el texto no se desborde */
+.servicio-card .tech-svg text {
+    font-size: 1.3rem;
+    font-weight: 800;
+    fill: #ff5722;
+    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+    dominant-baseline: middle;
 }

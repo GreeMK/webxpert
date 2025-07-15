@@ -1,16 +1,20 @@
 @import url('../base/variables.css');
 
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: var(--font-main);
     margin: 0;
     padding: 0;
-    background: var(--color-bg-dark);
+    background: var(--color-bg);
     color: var(--color-text);
-    background-image: url('/img/web\ services.avif');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    /* Eliminar imagen de fondo para máxima legibilidad y congruencia */
+    /* background-image: none; */
+    transition: background 0.3s, color 0.3s;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-title);
+    color: var(--color-primary);
+    margin-top: 0;
 }
 
 header {
@@ -41,7 +45,8 @@ header h1 {
 nav ul {
     list-style: none;
     display: flex;
-    gap: 25px;
+    justify-content: center;
+    gap: 2em;
     margin: 0;
     padding: 0;
 }
@@ -51,11 +56,11 @@ nav a {
     color: var(--color-text);
     font-weight: 600;
     font-size: 1.1rem;
-    transition: color 0.3s;
+    transition: color 0.2s;
     position: relative;
 }
-nav a:hover {
-    color: var(--color-accent);
+nav a:hover, nav a:focus {
+    color: var(--color-primary);
 }
 nav a[aria-current="page"]::after {
     content: '';
@@ -64,7 +69,7 @@ nav a[aria-current="page"]::after {
     left: 0;
     width: 100%;
     height: 2px;
-    background: var(--color-accent);
+    background: var(--color-primary);
 }
 
 main {
@@ -73,47 +78,43 @@ main {
 
 .hero {
     text-align: center;
-    padding: 60px 20px 40px 20px;
-    background: linear-gradient(45deg, var(--color-primary) 60%, var(--color-bg-dark) 100%);
-    color: var(--color-light);
-    border-radius: 0 0 30px 30px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-    animation: slideInUp 0.8s ease-out;
+    padding: 3em 1em 2em 1em;
+    background: linear-gradient(120deg, #6c3cff 60%, #3a1aff 100%);
+    color: var(--color-text);
+    border-radius: 0 0 2em 2em;
+    margin-bottom: 2em;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    animation: fadeInDown 1s;
 }
 .hero h2 {
-    color: var(--color-accent);
-    font-size: 2.5rem;
+    color: var(--color-primary);
+    font-size: 3rem;
     margin-bottom: 10px;
-    font-weight: 700;
+    font-weight: 800;
     animation: fadeInUp 1s ease-out 0.2s both;
 }
 .hero p {
+    color: var(--color-text);
     font-size: 1.2rem;
     margin-bottom: 25px;
     animation: fadeInUp 1s ease-out 0.4s both;
 }
 
 .btn-diseño, button {
-    background: var(--color-accent);
-    color: var(--color-text);
-    font-size: 1rem;
-    padding: 12px 28px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
+    background: var(--color-primary);
+    color: var(--color-text-light);
+    font-size: 1.2em;
     font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    padding: 0.7em 2em;
+    margin: 18px 0 0 0;
     box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-    transition: transform 0.3s, background 0.4s, box-shadow 0.3s;
-    margin: 10px 0;
-    position: relative;
-    overflow: hidden;
+    transition: background 0.2s, transform 0.2s;
 }
 .btn-diseño:hover, button:hover {
-    transform: scale(1.07);
-    background: var(--color-primary);
-    color: var(--color-light);
-    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    background: var(--color-primary-dark);
+    color: var(--color-text-light);
 }
 .btn-diseño:active, button:active {
     transform: scale(1.05);
@@ -121,11 +122,13 @@ main {
 
 .servicios {
     padding: 40px 20px;
+    background: var(--color-bg);
 }
 .servicios h2 {
     text-align: center;
-    color: var(--color-accent);
-    font-size: 2.5rem;
+    color: var(--color-primary);
+    font-size: 2.8rem;
+    font-weight: 800;
     margin-bottom: 30px;
     animation: fadeInUp 0.8s ease-out;
 }
@@ -133,30 +136,32 @@ main {
 .servicios .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 30px;
+    gap: 2em;
     text-align: center;    
-    margin: 0 20px;
+    margin: 2em 0;
+    background: var(--color-bg);
 }
 
 .item {
-    background: var(--color-light);
-    color: var(--color-bg-dark);
-    padding: 35px 20px;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    transition: transform 0.3s, box-shadow 0.3s;
-    animation: fadeInUp 0.8s ease-out;
+    background: var(--color-bg-card);
+    color: var(--color-text-dark);
+    padding: 2em 1.5em;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    transition: box-shadow 0.2s, transform 0.2s;
+    animation: fadeInUp 1s;
     position: relative;
     overflow: hidden;
 }
-.item:hover {
-    transform: scale(1.04);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.13);
+.item:hover, .item:focus {
+    box-shadow: 0 6px 24px rgba(78,35,252,0.12);
+    transform: translateY(-4px) scale(1.02);
 }
 .item h3 {
-    color: var(--color-primary);
+    color: var(--color-text-secondary);
     margin-bottom: 15px;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+    font-weight: 700;
 }
 
 /* Testimonios Section */
@@ -167,7 +172,7 @@ main {
 }
 .testimonios h2 {
     text-align: center;
-    color: var(--color-accent);
+    color: var(--color-primary);
     font-size: 2.5rem;
     margin-bottom: 40px;
     animation: fadeInUp 0.8s ease-out;
@@ -180,8 +185,8 @@ main {
     margin: 0 auto;
 }
 .testimonio {
-    background: var(--color-light);
-    color: var(--color-bg-dark);
+    background: var(--color-bg-card);
+    color: var(--color-text-dark);
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 4px 16px rgba(0,0,0,0.1);
@@ -192,7 +197,7 @@ main {
 .testimonio::before {
     content: '"';
     font-size: 4rem;
-    color: var(--color-accent);
+    color: var(--color-primary);
     position: absolute;
     top: -10px;
     left: 20px;
@@ -221,12 +226,12 @@ footer {
     margin-top: 40px;
 }
 footer a {
-    color: var(--color-accent);
+    color: var(--color-primary);
     text-decoration: none;
     transition: color 0.3s;
 }
 footer a:hover {
-    color: var(--color-primary);
+    color: var(--color-accent);
 }
 
 /* Animaciones */
@@ -255,6 +260,11 @@ footer a:hover {
         opacity: 1; 
         transform: translateY(0); 
     }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-40px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Loading States */
@@ -330,4 +340,43 @@ button:focus, a:focus {
         grid-template-columns: 1fr;
         gap: 20px;
     }
+}
+
+@media (max-width: 600px) {
+    .hero { padding: 2em 0.5em 1.5em 0.5em; }
+    .grid-container { gap: 1em; }
+    .item { padding: 1.2em 0.7em; }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: var(--color-bg-dark);
+    color: var(--color-text-light);
+  }
+  .item {
+    background: #23272f;
+    color: var(--color-text-light);
+  }
+  .hero {
+    background: linear-gradient(120deg, var(--color-primary-dark) 60%, var(--color-secondary) 100%);
+    color: var(--color-text-light);
+  }
+  header, footer {
+    background: #181a1b;
+    color: var(--color-text-light);
+  }
+  nav a {
+    color: var(--color-text-light);
+  }
+  nav a:hover, nav a:focus {
+    color: var(--color-accent);
+  }
+  .testimonios {
+    background: #181a1b;
+    color: var(--color-text-light);
+  }
+  .testimonio {
+    background: #23272f;
+    color: var(--color-text-light);
+  }
 }
