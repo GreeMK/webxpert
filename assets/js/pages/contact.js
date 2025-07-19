@@ -308,4 +308,50 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // Función para detectar parámetro URL y pre-seleccionar servicio
+    function detectarServicioDeURL() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const servicio = urlParams.get('servicio');
+        
+        if (servicio) {
+            const selectServicio = document.getElementById('servicio');
+            if (selectServicio) {
+                // Mapeo de parámetros URL a valores del select
+                const mapeoServicios = {
+                    'auditoria': 'auditoria',
+                    'redes-sociales': 'redes-sociales',
+                    'diseno-web': 'diseno-web',
+                    'seo': 'seo',
+                    'administracion-db': 'administracion-db'
+                };
+                
+                const valorServicio = mapeoServicios[servicio];
+                if (valorServicio) {
+                    selectServicio.value = valorServicio;
+                    
+                    // Efecto visual para mostrar que se pre-seleccionó
+                    selectServicio.style.backgroundColor = '#f0f8ff';
+                    selectServicio.style.borderColor = '#4e23fc';
+                    
+                    // Remover el efecto después de 3 segundos
+                    setTimeout(() => {
+                        selectServicio.style.backgroundColor = '';
+                        selectServicio.style.borderColor = '';
+                    }, 3000);
+                    
+                    // Tracking de Google Analytics
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'form_prefill', {
+                            'event_category': 'engagement',
+                            'event_label': 'servicio_' + servicio
+                        });
+                    }
+                }
+            }
+        }
+    }
+
+    // Ejecutar la función cuando se carga la página
+    detectarServicioDeURL();
 }); 
