@@ -15,6 +15,117 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
 }
 
+/* Efectos especiales para WebXpert */
+header h1 {
+    font-size: 2.7rem;
+    margin: 0 30px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    position: relative;
+    animation: glitchEffect 8s infinite;
+}
+
+/* Efecto Glitch Sutil */
+@keyframes glitchEffect {
+    0%, 95%, 100% {
+        transform: translateX(0);
+        text-shadow: 
+            0 0 5px rgba(78, 35, 252, 0.3),
+            0 0 10px rgba(78, 35, 252, 0.2);
+    }
+    96% {
+        transform: translateX(-1px);
+        text-shadow: 
+            2px 0 0 rgba(255, 0, 0, 0.3),
+            -2px 0 0 rgba(0, 255, 255, 0.3),
+            0 0 5px rgba(78, 35, 252, 0.5);
+    }
+    97% {
+        transform: translateX(1px);
+        text-shadow: 
+            -2px 0 0 rgba(255, 0, 0, 0.3),
+            2px 0 0 rgba(0, 255, 255, 0.3),
+            0 0 5px rgba(78, 35, 252, 0.5);
+    }
+    98% {
+        transform: translateX(0);
+        text-shadow: 
+            0 0 5px rgba(78, 35, 252, 0.3),
+            0 0 10px rgba(78, 35, 252, 0.2);
+    }
+}
+
+/* Partículas Sutiles */
+header h1::before,
+header h1::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: radial-gradient(circle, #4e23fc 30%, rgba(78, 35, 252, 0.6) 70%);
+    border-radius: 50%;
+    animation: particleFloat 4s ease-in-out infinite;
+    opacity: 0.7;
+}
+
+header h1::before {
+    top: -10px;
+    left: -15px;
+    animation-delay: 0s;
+}
+
+header h1::after {
+    top: 50%;
+    right: -20px;
+    animation-delay: 2s;
+}
+
+/* Partículas adicionales con pseudo-elementos */
+header h1 {
+    position: relative;
+}
+
+header h1::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(78, 35, 252, 0.4) 1px, transparent 1px),
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.6) 1px, transparent 1px),
+        radial-gradient(circle at 40% 40%, rgba(139, 92, 246, 0.3) 1px, transparent 1px),
+        radial-gradient(circle at 90% 90%, rgba(78, 35, 252, 0.5) 1px, transparent 1px);
+    background-size: 100px 100px, 80px 80px, 120px 120px, 60px 60px;
+    background-position: 0 0, 20px 20px, 40px 40px, 60px 60px;
+    animation: particleBackground 6s ease-in-out infinite;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+@keyframes particleFloat {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translateY(-8px) scale(1.2);
+        opacity: 1;
+    }
+}
+
+@keyframes particleBackground {
+    0%, 100% {
+        opacity: 0.6;
+        transform: translateX(0);
+    }
+    50% {
+        opacity: 0.8;
+        transform: translateX(2px);
+    }
+}
+
 header, footer {
     background: var(--color-bg-dark);
     color: var(--color-text);
@@ -246,10 +357,11 @@ input:focus, textarea:focus, select:focus {
     user-select: none;
 }
 .checkbox-label input[type="checkbox"] {
-    accent-color: var(--color-primary);
-    width: 1.2em;
-    height: 1.2em;
-    margin-right: 0.3em;
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
 }
 .checkmark {
     display: inline-block;
@@ -260,6 +372,7 @@ input:focus, textarea:focus, select:focus {
     border: 1.5px solid var(--color-primary);
     margin-right: 0.3em;
     position: relative;
+    transition: all 0.2s ease;
 }
 .checkbox-label input[type="checkbox"]:checked + .checkmark {
     background: var(--color-primary);
@@ -275,6 +388,10 @@ input:focus, textarea:focus, select:focus {
     border: solid #fff;
     border-width: 0 0.18em 0.18em 0;
     transform: rotate(45deg);
+}
+.checkbox-label:hover .checkmark {
+    border-color: var(--color-primary-dark);
+    background: rgba(255, 87, 34, 0.1);
 }
 
 .btn-enviar {
@@ -336,6 +453,19 @@ footer a:hover svg {
     .visual-contacto, .visual-formulario {
         max-width: 100%;
         min-width: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    header h1 {
+        font-size: 2.3rem;
+        margin: 0;
     }
 }
 @media (max-width: 600px) {

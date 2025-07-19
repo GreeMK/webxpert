@@ -20,8 +20,8 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 20px 40px;
-    background: var(--color-primary-dark);
-    color: var(--color-text-light);
+    background: var(--color-bg-dark);
+    color: var(--color-text);
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     position: sticky;
     top: 0;
@@ -34,10 +34,113 @@ header img {
 }
 
 header h1 {
-    font-size: 2.2rem;
+    font-size: 2.7rem;
     margin: 0 30px;
     letter-spacing: 2px;
     font-weight: 700;
+    position: relative;
+    animation: glitchEffect 8s infinite;
+}
+
+/* Efecto Glitch Sutil */
+@keyframes glitchEffect {
+    0%, 95%, 100% {
+        transform: translateX(0);
+        text-shadow: 
+            0 0 5px rgba(78, 35, 252, 0.3),
+            0 0 10px rgba(78, 35, 252, 0.2);
+    }
+    96% {
+        transform: translateX(-1px);
+        text-shadow: 
+            2px 0 0 rgba(255, 0, 0, 0.3),
+            -2px 0 0 rgba(0, 255, 255, 0.3),
+            0 0 5px rgba(78, 35, 252, 0.5);
+    }
+    97% {
+        transform: translateX(1px);
+        text-shadow: 
+            -2px 0 0 rgba(255, 0, 0, 0.3),
+            2px 0 0 rgba(0, 255, 255, 0.3),
+            0 0 5px rgba(78, 35, 252, 0.5);
+    }
+    98% {
+        transform: translateX(0);
+        text-shadow: 
+            0 0 5px rgba(78, 35, 252, 0.3),
+            0 0 10px rgba(78, 35, 252, 0.2);
+    }
+}
+
+/* Partículas Sutiles */
+header h1::before,
+header h1::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: radial-gradient(circle, #4e23fc 30%, rgba(78, 35, 252, 0.6) 70%);
+    border-radius: 50%;
+    animation: particleFloat 4s ease-in-out infinite;
+    opacity: 0.7;
+}
+
+header h1::before {
+    top: -10px;
+    left: -15px;
+    animation-delay: 0s;
+}
+
+header h1::after {
+    top: 50%;
+    right: -20px;
+    animation-delay: 2s;
+}
+
+/* Partículas adicionales con pseudo-elementos */
+header h1 {
+    position: relative;
+}
+
+header h1::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(78, 35, 252, 0.4) 1px, transparent 1px),
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.6) 1px, transparent 1px),
+        radial-gradient(circle at 40% 40%, rgba(139, 92, 246, 0.3) 1px, transparent 1px),
+        radial-gradient(circle at 90% 90%, rgba(78, 35, 252, 0.5) 1px, transparent 1px);
+    background-size: 100px 100px, 80px 80px, 120px 120px, 60px 60px;
+    background-position: 0 0, 20px 20px, 40px 40px, 60px 60px;
+    animation: particleBackground 6s ease-in-out infinite;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+@keyframes particleFloat {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translateY(-8px) scale(1.2);
+        opacity: 1;
+    }
+}
+
+@keyframes particleBackground {
+    0%, 100% {
+        opacity: 0.6;
+        transform: translateX(0);
+    }
+    50% {
+        opacity: 0.8;
+        transform: translateX(2px);
+    }
 }
 
 nav ul {
@@ -50,13 +153,24 @@ nav ul {
 }
 
 nav a {
-    color: var(--color-text-light);
     text-decoration: none;
+    color: var(--color-text);
     font-weight: 600;
+    font-size: 1.1rem;
     transition: color 0.2s;
+    position: relative;
 }
 nav a:hover, nav a:focus {
-    color: var(--color-accent);
+    color: var(--color-primary);
+}
+nav a[aria-current="page"]::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--color-primary);
 }
 
 main {
@@ -64,23 +178,24 @@ main {
 }
 
 .hero {
-    padding: 3em 1em 2em 1em;
     text-align: center;
-    background: linear-gradient(120deg, var(--color-primary) 60%, var(--color-secondary) 100%);
-    color: var(--color-text-light);
+    padding: 3em 1em 2em 1em;
+    background: linear-gradient(120deg, #6c3cff 60%, #3a1aff 100%);
+    color: var(--color-text);
     border-radius: 0 0 2em 2em;
-    box-shadow: 0 4px 24px rgba(78,35,252,0.10);
     margin-bottom: 2em;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
     animation: fadeInDown 1s;
 }
 .hero h2 {
-    color: var(--color-accent);
+    color: var(--color-primary);
     font-size: 2.5rem;
     margin-bottom: 10px;
     font-weight: 700;
     animation: fadeInUp 1s ease-out 0.2s both;
 }
 .hero p {
+    color: var(--color-text);
     font-size: 1.2rem;
     margin-bottom: 25px;
     animation: fadeInUp 1s ease-out 0.4s both;
@@ -93,7 +208,7 @@ main {
 }
 
 .politica-container {
-    background: #fff;
+    background: var(--color-bg-card);
     border-radius: 1em;
     box-shadow: 0 2px 12px rgba(0,0,0,0.06);
     padding: 2em 1.5em;
@@ -118,6 +233,7 @@ main {
     margin-bottom: 15px;
     font-size: 1rem;
     line-height: 1.7;
+    color: var(--color-text-dark);
 }
 
 .politica-container ul {
@@ -129,6 +245,7 @@ main {
     margin-bottom: 8px;
     font-size: 1rem;
     line-height: 1.6;
+    color: var(--color-text-dark);
 }
 
 .contacto-info {
@@ -193,6 +310,7 @@ footer a:hover {
     margin-bottom: 0.7em;
     font-size: 1rem;
     line-height: 1.6;
+    color: var(--color-text-dark);
 }
 .icon-list li:before {
     content: '';
@@ -283,9 +401,9 @@ footer a:hover svg {
         flex-direction: column;
         gap: 15px;
     }
-    
+
     header h1 {
-        font-size: 1.8rem;
+        font-size: 2.3rem;
         margin: 0;
     }
     
@@ -338,6 +456,9 @@ footer a:hover svg {
     }
     .politica-container {
         background: #23272f;
+        color: var(--color-text-light);
+    }
+    .politica-container p, .politica-container li, .icon-list li {
         color: var(--color-text-light);
     }
     .hero {

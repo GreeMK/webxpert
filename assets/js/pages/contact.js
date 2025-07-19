@@ -8,11 +8,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const btnText = document.querySelector('.btn-text');
     const btnLoading = document.querySelector('.btn-loading');
 
-    // Validación en tiempo real
+    // Validación solo en blur (cuando el usuario sale del campo)
     const inputs = form.querySelectorAll('input, select, textarea');
     inputs.forEach(input => {
         input.addEventListener('blur', validateField);
-        input.addEventListener('input', clearError);
+        input.addEventListener('input', clearErrorOnInput);
     });
 
     // Manejo del envío del formulario
@@ -23,53 +23,54 @@ document.addEventListener('DOMContentLoaded', function() {
         const field = e.target;
         const value = field.value.trim();
         const fieldName = field.name;
-        const errorElement = document.getElementById(fieldName + '-error');
 
         // Limpiar error previo
         clearFieldError(field);
 
-        // Validaciones específicas por campo
-        switch(fieldName) {
-            case 'nombre':
-                if (value.length < 2) {
-                    showFieldError(field, 'El nombre debe tener al menos 2 caracteres');
-                } else if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(value)) {
-                    showFieldError(field, 'El nombre solo puede contener letras');
-                }
-                break;
+        // Solo validar si el campo tiene contenido o es requerido
+        if (value || field.hasAttribute('required')) {
+            // Validaciones específicas por campo
+            switch(fieldName) {
+                case 'nombre':
+                    if (value.length < 2) {
+                        showFieldError(field, 'El nombre debe tener al menos 2 caracteres');
+                    } else if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(value)) {
+                        showFieldError(field, 'El nombre solo puede contener letras');
+                    }
+                    break;
 
-            case 'email':
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(value)) {
-                    showFieldError(field, 'Ingresa un email válido');
-                }
-                break;
+                case 'email':
+                    if (value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+                        showFieldError(field, 'Ingresa un email válido');
+                    }
+                    break;
 
-            case 'telefono':
-                if (value && !/^[\d\s\-\+\(\)]+$/.test(value)) {
-                    showFieldError(field, 'Ingresa un teléfono válido');
-                }
-                break;
+                case 'telefono':
+                    if (value && !/^[\d\s\-\+\(\)]+$/.test(value)) {
+                        showFieldError(field, 'Ingresa un teléfono válido');
+                    }
+                    break;
 
-            case 'servicio':
-                if (!value) {
-                    showFieldError(field, 'Selecciona un servicio');
-                }
-                break;
+                case 'servicio':
+                    if (!value) {
+                        showFieldError(field, 'Selecciona un servicio');
+                    }
+                    break;
 
-            case 'mensaje':
-                if (value.length < 10) {
-                    showFieldError(field, 'El mensaje debe tener al menos 10 caracteres');
-                } else if (value.length > 1000) {
-                    showFieldError(field, 'El mensaje no puede exceder 1000 caracteres');
-                }
-                break;
+                case 'mensaje':
+                    if (value.length < 10) {
+                        showFieldError(field, 'El mensaje debe tener al menos 10 caracteres');
+                    } else if (value.length > 1000) {
+                        showFieldError(field, 'El mensaje no puede exceder 1000 caracteres');
+                    }
+                    break;
 
-            case 'privacidad':
-                if (!field.checked) {
-                    showFieldError(field, 'Debes aceptar la política de privacidad');
-                }
-                break;
+                case 'privacidad':
+                    if (!field.checked) {
+                        showFieldError(field, 'Debes aceptar la política de privacidad');
+                    }
+                    break;
+            }
         }
     }
 
@@ -91,11 +92,53 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Función para limpiar error al escribir
-    function clearError(e) {
+    // Función para limpiar error al escribir (solo si ya no hay error)
+    function clearErrorOnInput(e) {
         const field = e.target;
+        const value = field.value.trim();
+        
+        // Solo limpiar si el campo ya no tiene errores
         if (field.classList.contains('error')) {
-            clearFieldError(field);
+            let hasError = false;
+            
+            // Verificar si el error persiste
+            switch(field.name) {
+                case 'nombre':
+                    if (value.length < 2 || !/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(value)) {
+                        hasError = true;
+                    }
+                    break;
+                case 'email':
+                    if (value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+                        hasError = true;
+                    }
+                    break;
+                case 'telefono':
+                    if (value && !/^[\d\s\-\+\(\)]+$/.test(value)) {
+                        hasError = true;
+                    }
+                    break;
+                case 'servicio':
+                    if (!value) {
+                        hasError = true;
+                    }
+                    break;
+                case 'mensaje':
+                    if (value.length < 10 || value.length > 1000) {
+                        hasError = true;
+                    }
+                    break;
+                case 'privacidad':
+                    if (!field.checked) {
+                        hasError = true;
+                    }
+                    break;
+            }
+            
+            // Solo limpiar si ya no hay error
+            if (!hasError) {
+                clearFieldError(field);
+            }
         }
     }
 
@@ -148,6 +191,11 @@ document.addEventListener('DOMContentLoaded', function() {
             // Mostrar mensaje de éxito
             showMessage('¡Mensaje enviado con éxito! Te contactaremos pronto.', 'success');
             form.reset();
+            
+            // Limpiar todos los errores al resetear
+            inputs.forEach(input => {
+                clearFieldError(input);
+            });
             
             // Tracking de Google Analytics
             if (typeof gtag !== 'undefined') {
