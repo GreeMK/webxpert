@@ -313,7 +313,7 @@ nav a:hover, nav a:focus {
 /* ===== GRID DE INTEGRANTES MEJORADO ===== */
 .integrantes {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--space-8);
     margin-top: var(--space-8);
     max-width: 1000px;
