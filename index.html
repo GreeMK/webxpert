@@ -28,6 +28,11 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/images/logos/logo_solito.jpg">
     
+    <!-- Preconnect para recursos externos -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://formspree.io">
+    
     <!-- Preload Critical Resources -->
     <link rel="preload" href="assets/css/base/variables.css" as="style">
     <link rel="preload" href="assets/css/pages/home.css" as="style">
@@ -61,24 +66,85 @@
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "webXpert",
+      "alternateName": "WebXpert",
       "url": "https://japintos.github.io/webxpert/",
-      "logo": "assets/images/logos/logo_solito.jpg",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://japintos.github.io/webxpert/assets/images/logos/logo_solito.jpg",
+        "width": 100,
+        "height": 100
+      },
+      "description": "Servicios profesionales de diseño web, optimización SEO y gestión de redes sociales. Transformamos tu presencia digital con estrategias avanzadas.",
+      "foundingDate": "2024",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Posadas",
+        "addressRegion": "Misiones",
+        "addressCountry": "AR"
+      },
       "contactPoint": [{
         "@type": "ContactPoint",
         "telephone": "+54 9 3764724207",
         "contactType": "customer service",
         "areaServed": "AR",
-        "availableLanguage": ["Spanish"]
+        "availableLanguage": ["Spanish"],
+        "hoursAvailable": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
       }],
       "sameAs": [
         "https://www.facebook.com/julioapintos",
         "https://www.instagram.com/julioapintos/",
         "https://www.linkedin.com/in/julio-pintos-0638a8200/"
-      ]
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios Digitales",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Diseño Web",
+              "description": "Sitios web modernos y responsivos"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Optimización SEO",
+              "description": "Mejora del posicionamiento en buscadores"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Gestión de Redes Sociales",
+              "description": "Manejo profesional de redes sociales"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Soporte IT",
+              "description": "Soporte técnico completo para empresas"
+            }
+          }
+        ]
+      }
     }
     </script>
 </head>
 <body>
+    <!-- Skip link para accesibilidad -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    
     <header role="banner">
         <div class="header-container">
             <div class="logo-section">

@@ -97,6 +97,11 @@
   --z-popover: 1060;
   --z-tooltip: 1070;
   
+  /* ===== ACCESIBILIDAD ===== */
+  --focus-ring: 0 0 0 3px rgba(78, 35, 252, 0.3);
+  --focus-ring-error: 0 0 0 3px rgba(231, 76, 60, 0.3);
+  --focus-ring-success: 0 0 0 3px rgba(39, 174, 96, 0.3);
+  
   /* ===== CONTAINERS ===== */
   --container-max-width: 1200px;
   --container-padding: 1rem;

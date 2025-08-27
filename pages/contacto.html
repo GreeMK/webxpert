@@ -98,45 +98,46 @@
             <!-- Formulario visual -->
             <div class="formulario-container visual-formulario">
                 <h3>Envíanos un Mensaje</h3>
-                <form id="contacto-form" class="formulario" action="https://formspree.io/f/tu-form-id" method="POST" autocomplete="off">
+                <form id="contacto-form" class="formulario" action="https://formspree.io/f/tu-form-id" method="POST" autocomplete="off" novalidate>
                     <div class="form-group">
                         <label for="nombre">Nombre Completo *</label>
                         <div class="input-icon-group">
                             <span class="input-icon" aria-hidden="true"><svg width="18" height="18" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" stroke="#6c3cff" stroke-width="2"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6" stroke="#ff5722" stroke-width="2"/></svg></span>
-                            <input type="text" id="nombre" name="nombre" required>
+                            <input type="text" id="nombre" name="nombre" required aria-required="true" aria-describedby="nombre-error" autocomplete="name">
                         </div>
-                        <span class="error-message" id="nombre-error"></span>
+                        <span class="error-message" id="nombre-error" role="alert" aria-live="polite"></span>
                     </div>
                     <div class="form-group">
                         <label for="email">Email *</label>
                         <div class="input-icon-group">
                             <span class="input-icon" aria-hidden="true"><svg width="18" height="18" fill="none" viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#ff5722"/><path d="M5 7l7 6 7-6" stroke="#fff" stroke-width="2"/><rect x="5" y="7" width="14" height="10" rx="2" stroke="#fff" stroke-width="2"/></svg></span>
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" id="email" name="email" required aria-required="true" aria-describedby="email-error" autocomplete="email">
                         </div>
-                        <span class="error-message" id="email-error"></span>
+                        <span class="error-message" id="email-error" role="alert" aria-live="polite"></span>
                     </div>
                     <div class="form-group">
                         <label for="telefono">Teléfono</label>
                         <div class="input-icon-group">
-                            <span class="input-icon" aria-hidden="true"><svg width="18" height="18" fill="none" viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#6c3cff"/><path d="M7 17l2-2c.2-.2.5-.2.7 0l1.3 1.3c2.2-1.1 4-2.9 5.1-5.1L17 9.7c.2-.2.2-.5 0-.7l-2-2c-.2-.2-.5-.2-.7 0l-1.2 1.2c-.2.2-.3.5-.2.8.2.7.5 1.4 1 2 .5.5 1.3.8 2 .9.3.1.6 0 .8-.2l1.2-1.2c.2-.2.2-.5 0-.7l-2-2c-.2-.2-.5-.2-.7 0l-1.2 1.2c-.2.2-.3.5-.2.8.2.7.5 1.4 1 2 .5.5 1.3.8 2 .9.3.1.6 0 .8-.2z" stroke="#fff" stroke-width="2"/></svg></span>
-                            <input type="tel" id="telefono" name="telefono">
+                            <span class="input-icon" aria-hidden="true"><svg width="18" height="18" fill="none" viewBox="0 0 24 24"><rect width="24" height="24" rx="6" fill="#6c3cff"/><path d="M7 17l2-2c.2-.2.5-.2.7 0l1.3 1.3c2.2-1.1 4-2.9 5.1-5.1L17 9.7c.2-.2.2-.5 0-.7l-2-2c-.2-.2-.5-.2-.7 0l-1.2 1.2c-.2.2-.3.5-.2.8.2.7.5 1.4 1 2 .5.5 1.3.8 2 .9.3.1.6 0 .8-.2z" stroke="#fff" stroke-width="2"/></svg></span>
+                            <input type="tel" id="telefono" name="telefono" autocomplete="tel">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="servicio">Servicio de Interés *</label>
                         <div class="input-icon-group">
                             <span class="input-icon" aria-hidden="true"><svg width="18" height="18" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#ff5722" stroke-width="2"/><path d="M8 12h8M12 8v8" stroke="#6c3cff" stroke-width="2"/></svg></span>
-                            <select id="servicio" name="servicio" required>
+                            <select id="servicio" name="servicio" required aria-required="true" aria-describedby="servicio-error">
                                 <option value="">Selecciona un servicio</option>
                                 <option value="diseno-web">Diseño Web</option>
                                 <option value="seo">Optimización SEO</option>
                                 <option value="redes-sociales">Gestión de Redes Sociales</option>
                                 <option value="auditoria">Auditoría Web</option>
                                 <option value="administracion-db">Administración de Bases de Datos</option>
+                                <option value="soporte-it">Soporte IT</option>
                                 <option value="multiple">Múltiples Servicios</option>
                             </select>
                         </div>
-                        <span class="error-message" id="servicio-error"></span>
+                        <span class="error-message" id="servicio-error" role="alert" aria-live="polite"></span>
                     </div>
                     <div class="form-group">
                         <label for="presupuesto">Presupuesto Estimado</label>
@@ -150,8 +151,8 @@
                     </div>
                     <div class="form-group">
                         <label for="mensaje">Descripción del Proyecto *</label>
-                        <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Cuéntanos sobre tu proyecto, objetivos y cualquier detalle importante..."></textarea>
-                        <span class="error-message" id="mensaje-error"></span>
+                        <textarea id="mensaje" name="mensaje" rows="5" required aria-required="true" aria-describedby="mensaje-error" placeholder="Cuéntanos sobre tu proyecto, objetivos y cualquier detalle importante..."></textarea>
+                        <span class="error-message" id="mensaje-error" role="alert" aria-live="polite"></span>
                     </div>
                     <div class="form-group checkbox-group">
                         <label class="checkbox-label">
