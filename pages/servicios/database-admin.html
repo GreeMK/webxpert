@@ -45,17 +45,22 @@
 </head>
 <body>
     <header role="banner">
-        <img src="../../assets/images/logos/logo_solito.jpg" alt="webXpert Logo" width="100">
-        <h1>WebXpert</h1>
-        <nav role="navigation" aria-label="Navegación principal">
-            <ul>
-                <li><a href="../../index.html">Inicio</a></li>
-                <li><a href="../nosotros.html">¿Quiénes Somos?</a></li>
-                <li><a href="../contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
+        <div class="header-container">
+            <div class="logo-section">
+                <img src="../../assets/images/logos/logo_solito.jpg" alt="webXpert Logo" width="100" height="100">
+                <h1>WebXpert</h1>
+            </div>
+            <nav role="navigation" aria-label="Navegación principal">
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../nosotros.html">¿Quiénes Somos?</a></li>
+                    <li><a href="../contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <div id="current-page-desc" class="sr-only">Página actual</div>
+        </div>
     </header>
-    <main>
+    <main id="main-content">
         <!-- HERO -->
         <section class="hero">
             <div class="hero-content">
@@ -176,22 +181,30 @@
             <h2>¿Por qué Elegir Nuestros Servicios?</h2>
             <div class="beneficios-grid">
                 <div class="beneficio-card">
-                    <svg width="36" height="36" fill="none" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="16" stroke="#6c3cff" stroke-width="2"/><path d="M10 18l5 5 11-11" stroke="#ff5722" stroke-width="2.5" stroke-linecap="round"/></svg>
+                    <div class="beneficio-icon">
+                        <svg width="36" height="36" fill="none" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="16" stroke="#6c3cff" stroke-width="2"/><path d="M10 18l5 5 11-11" stroke="#ff5722" stroke-width="2.5" stroke-linecap="round"/></svg>
+                    </div>
                     <h3>Rendimiento Optimizado</h3>
                     <p>Mejoramos significativamente la velocidad de consultas y el tiempo de respuesta de tu aplicación.</p>
                 </div>
                 <div class="beneficio-card">
-                    <svg width="36" height="36" fill="none" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="16" stroke="#6c3cff" stroke-width="2"/><path d="M18 10v8l6 4" stroke="#ff5722" stroke-width="2.5" stroke-linecap="round"/></svg>
+                    <div class="beneficio-icon">
+                        <svg width="36" height="36" fill="none" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="16" stroke="#6c3cff" stroke-width="2"/><path d="M18 10v8l6 4" stroke="#ff5722" stroke-width="2.5" stroke-linecap="round"/></svg>
+                    </div>
                     <h3>Seguridad Avanzada</h3>
                     <p>Implementamos las mejores prácticas de seguridad para proteger tus datos sensibles.</p>
                 </div>
                 <div class="beneficio-card">
-                    <svg width="36" height="36" fill="none" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="16" stroke="#6c3cff" stroke-width="2"/><path d="M12 24l6-6 6 6" stroke="#ff5722" stroke-width="2.5" stroke-linecap="round"/></svg>
+                    <div class="beneficio-icon">
+                        <svg width="36" height="36" fill="none" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="16" stroke="#6c3cff" stroke-width="2"/><path d="M12 24l6-6 6 6" stroke="#ff5722" stroke-width="2.5" stroke-linecap="round"/></svg>
+                    </div>
                     <h3>Monitoreo Continuo</h3>
                     <p>Vigilancia 24/7 con alertas proactivas para prevenir problemas antes de que ocurran.</p>
                 </div>
                 <div class="beneficio-card">
-                    <svg width="36" height="36" fill="none" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="16" stroke="#6c3cff" stroke-width="2"/><path d="M12 18h12" stroke="#ff5722" stroke-width="2.5" stroke-linecap="round"/></svg>
+                    <div class="beneficio-icon">
+                        <svg width="36" height="36" fill="none" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="16" stroke="#6c3cff" stroke-width="2"/><path d="M12 18h12" stroke="#ff5722" stroke-width="2.5" stroke-linecap="round"/></svg>
+                    </div>
                     <h3>Ahorro de Costos</h3>
                     <p>Optimización de recursos que reduce costos de infraestructura y mejora la eficiencia.</p>
                 </div>

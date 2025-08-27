@@ -33,6 +33,9 @@
     <link rel="preload" href="assets/css/pages/home.css" as="style">
     <link rel="preload" href="assets/images/logos/logo_solito.jpg" as="image">
     
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <!-- Stylesheets -->
     <link rel="stylesheet" href="assets/css/pages/home.css">
     
@@ -77,18 +80,24 @@
 </head>
 <body>
     <header role="banner">
-        <img src="assets/images/logos/logo_solito.jpg" alt="webXpert Logo" width="100">
-        <h1>WebXpert</h1>
-        <nav role="navigation" aria-label="Navegación principal">
-            <ul>
-                <li><a href="#" aria-current="page">Inicio</a></li>
-                <li><a href="pages/nosotros.html">¿Quiénes Somos?</a></li>
-                <li><a href="pages/contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
+        <div class="header-container">
+            <div class="logo-section">
+                <img src="assets/images/logos/logo_solito.jpg" alt="webXpert Logo" width="100" height="100">
+                <h1>WebXpert</h1>
+            </div>
+            <nav role="navigation" aria-label="Navegación principal">
+                <ul>
+                    <li><a href="#" aria-current="page" aria-describedby="current-page-desc">Inicio</a></li>
+                    <li><a href="pages/nosotros.html">¿Quiénes Somos?</a></li>
+                    <li><a href="pages/contacto.html">Contacto</a></li>
+                    <li><a href="#proyectos" onclick="scrollToSection('proyectos')">Proyectos</a></li>
+                </ul>
+            </nav>
+            <div id="current-page-desc" class="sr-only">Página actual</div>
+        </div>
     </header>
 
-    <main>
+    <main id="main-content">
         <section class="hero">
             <h2>Optimización y Diseño Web a Otro Nivel</h2>
             <p>Impulsamos tu presencia digital con estrategias avanzadas.</p>
@@ -101,66 +110,294 @@
         <section class="servicios">
             <h2>Nuestros Servicios</h2>
             <div class="grid-container">
-               <div class="item">
-                     <h3>Diseño Web</h3>
-                        <a href="pages/servicios/diseno-web.html">
-                        <button class="btn-diseño">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:0.5em;"><path d="M12 4l1.41 1.41L7.83 11H20v2H7.83l5.58 5.59L12 20l-8-8z"/></svg>
-                            Ver Más
-                        </button>
-                        </a>
+                               <div class="item">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <h3>Diseño Web</h3>
+                    <p>Creamos sitios web modernos y responsivos que convierten visitantes en clientes.</p>
+                    <a href="pages/servicios/diseno-web.html" class="btn-diseño service-btn" aria-label="Ver más sobre diseño web">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:0.5em;"><path d="M12 4l1.41 1.41L7.83 11H20v2H7.83l5.58 5.59L12 20l-8-8z"/></svg>
+                        Ver Más
+                    </a>
                 </div>
 
                 <div class="item">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                        </svg>
+                    </div>
                     <h3>Optimización SEO</h3>
-                    <a href="pages/servicios/seo.html">
-                        <button class="btn-diseño">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:0.5em;"><path d="M12 4l1.41 1.41L7.83 11H20v2H7.83l5.58 5.59L12 20l-8-8z"/></svg>
-                            Ver Más
-                        </button>
+                    <p>Mejoramos tu posicionamiento en buscadores para aumentar el tráfico orgánico.</p>
+                    <a href="pages/servicios/seo.html" class="btn-diseño service-btn" aria-label="Ver más sobre optimización SEO">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:0.5em;"><path d="M12 4l1.41 1.41L7.83 11H20v2H7.83l5.58 5.59L12 20l-8-8z"/></svg>
+                        Ver Más
                     </a>
                 </div>
                 <div class="item">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05C15.64 13.36 17 14.28 17 15.5V19h7v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                        </svg>
+                    </div>
                     <h3>Redes Sociales</h3>
-                    <a href="pages/servicios/social-media.html">
-                        <button class="btn-diseño">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:0.5em;"><path d="M12 4l1.41 1.41L7.83 11H20v2H7.83l5.58 5.59L12 20l-8-8z"/></svg>
-                            Ver Más
-                        </button>
+                    <p>Gestionamos tu presencia en redes sociales para conectar con tu audiencia.</p>
+                    <a href="pages/servicios/social-media.html" class="btn-diseño service-btn" aria-label="Ver más sobre gestión de redes sociales">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:0.5em;"><path d="M12 4l1.41 1.41L7.83 11H20v2H7.83l5.58 5.59L12 20l-8-8z"/></svg>
+                        Ver Más
                     </a>
                 </div>
                 <div class="item">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
                     <h3>Auditoría Web</h3>
-                    <a href="pages/servicios/auditoria-web.html">
-                        <button class="btn-diseño">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:0.5em;"><path d="M12 4l1.41 1.41L7.83 11H20v2H7.83l5.58 5.59L12 20l-8-8z"/></svg>
-                            Ver Más
-                        </button>
+                    <p>Analizamos tu sitio web para identificar oportunidades de mejora y optimización.</p>
+                    <a href="pages/servicios/auditoria-web.html" class="btn-diseño service-btn" aria-label="Ver más sobre auditoría web">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:0.5em;"><path d="M12 4l1.41 1.41L7.83 11H20v2H7.83l5.58 5.59L12 20l-8-8z"/></svg>
+                        Ver Más
                     </a>
                 </div>
                 <div class="item">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M4 7v10c0 2.21 3.58 4 8 4s8-1.79 8-4V7c0-2.21-3.58-4-8-4s-8 1.79-8 4z"/>
+                            <path d="M12 5c3.31 0 6 1.34 6 3v2H6V8c0-1.66 2.69-3 6-3z"/>
+                        </svg>
+                    </div>
                     <h3>Administración de Bases de Datos</h3>
-                    <a href="pages/servicios/database-admin.html">
-                        <button class="btn-diseño">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:0.5em;"><path d="M12 4l1.41 1.41L7.83 11H20v2H7.83l5.58 5.59L12 20l-8-8z"/></svg>
-                            Ver Más
-                        </button>
+                    <p>Gestionamos y optimizamos tus bases de datos para máximo rendimiento y seguridad.</p>
+                    <a href="pages/servicios/database-admin.html" class="btn-diseño service-btn" aria-label="Ver más sobre administración de bases de datos">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:0.5em;"><path d="M12 4l1.41 1.41L7.83 11H20v2H7.83l5.58 5.59L12 20l-8-8z"/></svg>
+                        Ver Más
+                    </a>
+                </div>
+                <div class="item">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20 18c1.1 0 1.99-.9 1.99-2L22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"/>
+                        </svg>
+                    </div>
+                    <h3>Soporte IT</h3>
+                    <p>Soporte técnico completo para desktop, notebooks, impresoras, redes LAN y WiFi.</p>
+                    <a href="pages/servicios/soporte-it.html" class="btn-diseño service-btn" aria-label="Ver más sobre soporte IT">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:0.5em;"><path d="M12 4l1.41 1.41L7.83 11H20v2H7.83l5.58 5.59L12 20l-8-8z"/></svg>
+                        Ver Más
                     </a>
                 </div>
             </div>
         </section>
 
-        <section class="testimonios">
-            <h2>Lo que dicen nuestros clientes</h2>
-            <div class="testimonios-grid">
-                <div class="testimonio">
-                    <p>"webXpert transformó completamente nuestra presencia online. El tráfico aumentó un 300% en solo 3 meses."</p>
-                    <cite>- María González, CEO TechStart</cite>
-                </div>
-                <div class="testimonio">
-                    <p>"Profesionales, puntuales y con resultados excepcionales. Recomendados 100%."</p>
-                    <cite>- Carlos Rodríguez, Emprendedor</cite>
-                </div>
+        <!-- Sección de Proyectos Destacados -->
+        <section id="proyectos" class="section section--projects" data-aos="fade-up">
+            <div class="section__header">
+                <h2 class="section__title">Proyectos Destacados</h2>
+                <div class="section__subtitle">Algunos de nuestros trabajos más relevantes</div>
+            </div>
+            <div class="proyectos-grid">
+                <article class="proyecto-card proyecto-card--featured" tabindex="0" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="proyecto-card__image">
+                        <img src="assets/images/proyectos/carrito de compras.jpg" alt="Captura de pantalla del Carrito de Compras" loading="lazy" />
+                        <div class="proyecto-card__overlay">
+                            <div class="proyecto-card__tech-stack">
+                                <i class="fab fa-react" aria-label="React" title="React" data-tooltip="React"></i>
+                                <i class="fab fa-node-js" aria-label="Node.js" title="Node.js" data-tooltip="Node.js"></i>
+                                <svg class="icon-svg" viewBox="0 0 48 48" width="24" height="24" aria-label="PostgreSQL" title="PostgreSQL" data-tooltip="PostgreSQL">
+                                    <image href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" width="24" height="24"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="proyecto-card__content">
+                        <h3 class="proyecto-card__title">Carrito de Compras WebXpert</h3>
+                        <p class="proyecto-card__desc">E-commerce SPA responsiva con catálogo, filtros, búsqueda, gestión de carrito y checkout. Implementada con React, Vite, JavaScript ES6+, CSS3 modular y consumo de API REST. Optimizada para UX, performance y mobile.</p>
+                        <div class="proyecto-card__features">
+                            <span class="feature">React + Vite</span>
+                            <span class="feature">JavaScript ES6+</span>
+                            <span class="feature">CSS3 Modular</span>
+                            <span class="feature">API REST</span>
+                            <span class="feature">SPA Responsive</span>
+                        </div>
+                        <div class="proyecto-card__actions">
+                            <a href="https://carritocompraswebxpert.vercel.app/catalogo" target="_blank" rel="noopener">
+                                <span>Ver proyecto</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <div class="project-tech" style="display: none;">React, Vite, JavaScript ES6+, CSS3, API REST, SPA</div>
+                    </div>
+                </article>
+                
+                <article class="proyecto-card" tabindex="0" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="proyecto-card__image">
+                        <img src="assets/images/proyectos/proyecto2.jpg" alt="Captura de pantalla de la Landing para WebXpert" loading="lazy" />
+                        <div class="proyecto-card__overlay">
+                            <div class="proyecto-card__tech-stack">
+                                <i class="fab fa-html5" aria-label="HTML5" title="HTML5" data-tooltip="HTML5"></i>
+                                <i class="fab fa-css3-alt" aria-label="CSS3" title="CSS3" data-tooltip="CSS3"></i>
+                                <i class="fab fa-js" aria-label="JavaScript" title="JavaScript" data-tooltip="JavaScript"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="proyecto-card__content">
+                        <h3 class="proyecto-card__title">Landing para WebXpert</h3>
+                        <p class="proyecto-card__desc">Sitio institucional moderno con diseño responsive y animaciones SVG. Optimizado para conversión y experiencia de usuario.</p>
+                        <div class="proyecto-card__features">
+                            <span class="feature">Responsive Design</span>
+                            <span class="feature">Animaciones SVG</span>
+                            <span class="feature">SEO Optimizado</span>
+                        </div>
+                        <div class="proyecto-card__actions">
+                            <a href="https://www.webxpert.com.ar" target="_blank" rel="noopener">
+                                <span>Ver sitio</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <button class="btn btn--outline btn--small btn-details" data-project="proyecto2">
+                                <span>Detalles</span><i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                        <div class="project-tech" style="display: none;">HTML5, CSS3, JavaScript</div>
+                    </div>
+                </article>
+                
+                <article class="proyecto-card" tabindex="0" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="proyecto-card__image">
+                        <img src="assets/images/proyectos/oudin.jpg" alt="Captura de pantalla del sitio Oudin, Duarte & Asociados" loading="lazy" />
+                        <div class="proyecto-card__overlay">
+                            <div class="proyecto-card__tech-stack">
+                                <i class="fab fa-html5" aria-label="HTML5" title="HTML5" data-tooltip="HTML5"></i>
+                                <i class="fab fa-css3-alt" aria-label="CSS3" title="CSS3" data-tooltip="CSS3"></i>
+                                <i class="fab fa-js" aria-label="JavaScript" title="JavaScript" data-tooltip="JavaScript"></i>
+                                <i class="fas fa-paint-brush" aria-label="Diseño Web" title="Diseño Web" data-tooltip="Diseño Web"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="proyecto-card__content">
+                        <h3 class="proyecto-card__title">Oudin, Duarte & Asociados</h3>
+                        <p class="proyecto-card__desc">Sitio web institucional para estudio jurídico, con enfoque en experiencia de usuario, accesibilidad y optimización SEO. Incluye presentación de servicios, equipo, publicaciones y contacto.</p>
+                        <div class="proyecto-card__features">
+                            <span class="feature">Responsive Design</span>
+                            <span class="feature">SEO Optimizado</span>
+                            <span class="feature">Accesibilidad</span>
+                        </div>
+                        <div class="proyecto-card__actions">
+                            <a href="https://japintos.github.io/estudioOudin/" target="_blank" rel="noopener">
+                                <span>Ver sitio</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <button class="btn btn--outline btn--small btn-details" data-project="proyecto3">
+                                <span>Detalles</span><i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                        <div class="project-tech" style="display: none;">HTML5, CSS3, JavaScript, Diseño Web</div>
+                    </div>
+                </article>
+                
+                <article class="proyecto-card" tabindex="0" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="proyecto-card__image">
+                        <img src="assets/images/proyectos/carrito de compras.jpg" alt="Zahra Perfumes - E-commerce de Perfumes" loading="lazy" />
+                        <div class="proyecto-card__overlay">
+                            <div class="proyecto-card__tech-stack">
+                                <i class="fab fa-react" aria-label="React" title="React" data-tooltip="React"></i>
+                                <i class="fab fa-js" aria-label="JavaScript" title="JavaScript" data-tooltip="JavaScript"></i>
+                                <i class="fab fa-css3-alt" aria-label="CSS3" title="CSS3" data-tooltip="CSS3"></i>
+                                <i class="fas fa-shopping-cart" aria-label="E-commerce" title="E-commerce" data-tooltip="E-commerce"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="proyecto-card__content">
+                        <h3 class="proyecto-card__title">Zahra Perfumes</h3>
+                        <p class="proyecto-card__desc">E-commerce moderno y elegante para venta de perfumes. Diseño sofisticado con catálogo de productos, carrito de compras, filtros avanzados y experiencia de usuario optimizada. Desarrollado con React y tecnologías web modernas.</p>
+                        <div class="proyecto-card__features">
+                            <span class="feature">React + JavaScript</span>
+                            <span class="feature">E-commerce Completo</span>
+                            <span class="feature">Diseño Elegante</span>
+                            <span class="feature">Responsive Design</span>
+                        </div>
+                        <div class="proyecto-card__actions">
+                            <a href="https://zahraperfumes.vercel.app/" target="_blank" rel="noopener">
+                                <span>Ver sitio</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <button class="btn btn--outline btn--small btn-details" data-project="zahra-perfumes">
+                                <span>Detalles</span><i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                        <div class="project-tech" style="display: none;">React, JavaScript, CSS3, E-commerce</div>
+                    </div>
+                </article>
+                
+                <article class="proyecto-card" tabindex="0" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="proyecto-card__image">
+                        <img src="assets/images/proyectos/web-consecionario.jpg" alt="Captura de pantalla de Concesionario Web" loading="lazy" />
+                        <div class="proyecto-card__overlay">
+                            <div class="proyecto-card__tech-stack">
+                                <i class="fab fa-html5" aria-label="HTML5" title="HTML5" data-tooltip="HTML5"></i>
+                                <i class="fab fa-css3-alt" aria-label="CSS3" title="CSS3" data-tooltip="CSS3"></i>
+                                <i class="fab fa-js" aria-label="JavaScript" title="JavaScript" data-tooltip="JavaScript"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="proyecto-card__content">
+                        <h3 class="proyecto-card__title">Concesionario Web</h3>
+                        <p class="proyecto-card__desc">Sitio web moderno y responsivo para concesionaria de autos. Permite visualizar catálogo, detalles de vehículos, filtros avanzados y contacto directo. Optimizado para experiencia de usuario y dispositivos móviles.</p>
+                        <div class="proyecto-card__features">
+                            <span class="feature">Catálogo de vehículos</span>
+                            <span class="feature">Filtros avanzados</span>
+                            <span class="feature">Responsive Design</span>
+                            <span class="feature">Contacto directo</span>
+                        </div>
+                        <div class="proyecto-card__actions">
+                            <a href="https://concesionarioweb.vercel.app/" target="_blank" rel="noopener">
+                                <span>Ver sitio</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <button class="btn btn--outline btn--small btn-details" data-project="proyecto4">
+                                <span>Detalles</span><i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                        <div class="project-tech" style="display: none;">HTML5, CSS3, JavaScript</div>
+                    </div>
+                </article>
+                
+                <article class="proyecto-card" tabindex="0" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="proyecto-card__image">
+                        <img src="assets/images/proyectos/oudin.jpg" alt="Sosa & Bogado Estudio Jurídico" loading="lazy" />
+                        <div class="proyecto-card__overlay">
+                            <div class="proyecto-card__tech-stack">
+                                <i class="fab fa-html5" aria-label="HTML5" title="HTML5" data-tooltip="HTML5"></i>
+                                <i class="fab fa-css3-alt" aria-label="CSS3" title="CSS3" data-tooltip="CSS3"></i>
+                                <i class="fab fa-js" aria-label="JavaScript" title="JavaScript" data-tooltip="JavaScript"></i>
+                                <i class="fas fa-balance-scale" aria-label="Derecho" title="Derecho" data-tooltip="Derecho"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="proyecto-card__content">
+                        <h3 class="proyecto-card__title">Sosa & Bogado Estudio Jurídico</h3>
+                        <p class="proyecto-card__desc">Sitio web institucional profesional para estudio jurídico con trayectoria. Incluye presentación de áreas de práctica (penal, civil, comercial, laboral), publicaciones recientes y contacto. Diseño elegante y confiable.</p>
+                        <div class="proyecto-card__features">
+                            <span class="feature">Áreas de Práctica</span>
+                            <span class="feature">Publicaciones</span>
+                            <span class="feature">Diseño Profesional</span>
+                            <span class="feature">SEO Optimizado</span>
+                        </div>
+                        <div class="proyecto-card__actions">
+                            <a href="https://sosabogado.vercel.app/" target="_blank" rel="noopener">
+                                <span>Ver sitio</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <button class="btn btn--outline btn--small btn-details" data-project="sosa-bogado">
+                                <span>Detalles</span><i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                        <div class="project-tech" style="display: none;">HTML5, CSS3, JavaScript, Diseño Web</div>
+                    </div>
+                </article>
             </div>
         </section>
     </main>
@@ -183,6 +420,21 @@
         <p><a href="privacidad.html">Política de Privacidad</a> | <a href="terminos.html">Términos de Servicio</a></p>
     </footer>
 
+    <!-- Scripts principales -->
+    <script src="assets/js/utils/animations.js"></script>
+    
+    <!-- Script de respaldo para mostrar proyectos -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Asegurar que las tarjetas de proyectos sean visibles
+            const projectCards = document.querySelectorAll('.proyecto-card');
+            projectCards.forEach(card => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+    
     <!-- Service Worker Registration -->
     <script>
         if ('serviceWorker' in navigator) {
