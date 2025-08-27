@@ -1,6 +1,6 @@
 # 🚀 webXpert - Sitio Web Profesional
 
-**Sitio web corporativo para servicios de diseño web, SEO, marketing digital y administración de bases de datos.**
+**Sitio web corporativo para servicios de diseño web, SEO, marketing digital, administración de bases de datos y soporte técnico IT.**
 
 ## 📋 Descripción
 
@@ -10,27 +10,34 @@ webXpert es una agencia digital que ofrece servicios profesionales de:
 - 📱 **Redes Sociales** - Gestión de presencia en redes sociales
 - 🗄️ **Administración de Bases de Datos** - Auditoría, mantenimiento y backup
 - 🔧 **Auditoría Web** - Análisis y optimización de sitios web
+- 💻 **Soporte IT** - Soporte técnico completo para desktop, notebooks, impresoras, redes LAN y WiFi
 
 ## 🏗️ Estructura del Proyecto
 
 ```
 webXpert/
 ├── 📄 index.html                    # Página principal
+├── 📄 privacidad.html               # Política de privacidad
+├── 📄 terminos.html                 # Términos de servicio
 ├── 📁 pages/                        # Todas las páginas HTML
 │   ├── 📄 contacto.html             # Página de contacto
 │   ├── 📄 nosotros.html             # Página "Quiénes Somos"
-│   ├── 📁 legal/                    # Páginas legales
-│   │   ├── 📄 privacidad.html       # Política de privacidad
-│   │   └── 📄 terminos.html         # Términos de servicio
 │   └── 📁 servicios/                # Páginas de servicios
 │       ├── 📄 diseno-web.html       # Servicio de diseño web
 │       ├── 📄 seo.html              # Servicio de SEO
 │       ├── 📄 social-media.html     # Servicio de redes sociales
-│       └── 📄 database-admin.html   # Servicio de BD
+│       ├── 📄 database-admin.html   # Servicio de BD
+│       ├── 📄 auditoria-web.html    # Servicio de auditoría web
+│       └── 📄 soporte-it.html       # Servicio de soporte IT
+├── 📁 components/                   # Componentes reutilizables
+│   ├── 📄 projects-section.html     # Sección de proyectos
+│   ├── 📄 projects-section.css      # Estilos de proyectos
+│   ├── 📄 projects-section.js       # JavaScript de proyectos
+│   └── 📄 fontawesome-setup.html    # Configuración de iconos
 ├── 📁 assets/                       # Recursos estáticos
 │   ├── 📁 css/                      # Hojas de estilo
 │   │   ├── 📁 base/                 # Estilos base
-│   │   │   └── 📄 variables.css     # Variables CSS
+│   │   │   └── 📄 variables.css     # Variables CSS del sistema de diseño
 │   │   ├── 📁 components/           # Componentes reutilizables
 │   │   ├── 📁 layouts/              # Layouts y estructura
 │   │   └── 📁 pages/                # Estilos específicos por página
@@ -43,6 +50,7 @@ webXpert/
 │   │       └── 📄 social.css        # Estilos página redes sociales
 │   ├── 📁 js/                       # Scripts JavaScript
 │   │   ├── 📁 utils/                # Utilidades y helpers
+│   │   │   └── 📄 animations.js     # Animaciones y efectos
 │   │   ├── 📁 components/           # Componentes JS
 │   │   │   └── 📄 modal.js          # Componente modal
 │   │   └── 📁 pages/                # Scripts específicos por página
@@ -51,12 +59,17 @@ webXpert/
 │       ├── 📁 logos/                # Logos de la empresa
 │       ├── 📁 icons/                # Iconos y elementos gráficos
 │       ├── 📁 backgrounds/          # Imágenes de fondo
-│       └── 📁 services/             # Imágenes relacionadas con servicios
-├── 📁 config/                       # Archivos de configuración
-│   ├── 📄 manifest.json             # Manifest para PWA
-│   ├── 📄 robots.txt                # Configuración para crawlers
-│   ├── 📄 sitemap.xml               # Sitemap para SEO
-│   └── 📄 sw.js                     # Service Worker
+│       ├── 📁 services/             # Imágenes relacionadas con servicios
+│       │   ├── 📁 smm/              # Imágenes de redes sociales
+│       │   └── 📄 it-support.svg    # Icono de soporte IT
+│       ├── 📁 proyectos/            # Imágenes de proyectos
+│       └── 📁 team/                 # Fotos del equipo
+│           └── 📄 julio-pintos.jpg  # Foto de Julio Pintos
+├── 📄 manifest.json                 # Manifest para PWA
+├── 📄 robots.txt                    # Configuración para crawlers
+├── 📄 sitemap.xml                   # Sitemap para SEO
+├── 📄 sw.js                         # Service Worker
+├── 📄 package.json                  # Configuración del proyecto
 └── 📄 README.md                     # Documentación del proyecto
 ```
 
@@ -65,47 +78,76 @@ webXpert/
 ### ✅ **SEO Optimizado**
 - Meta tags completos para todas las páginas
 - Open Graph y Twitter Cards
-- Sitemap.xml y robots.txt
+- Sitemap.xml y robots.txt optimizados
 - Estructura semántica HTML
 - URLs amigables
+- Schema.org implementado
+- Preconnect para recursos externos
 
 ### ✅ **PWA (Progressive Web App)**
 - Service Worker para cache inteligente
 - Manifest.json configurado
 - Funcionalidad offline básica
 - Instalable como app nativa
+- Shortcuts para acceso rápido
+
+### ✅ **Sistema de Diseño Profesional**
+- Variables CSS centralizadas
+- Paleta de colores coherente
+- Tipografía jerárquica
+- Espaciado consistente
+- Sombras y efectos visuales
+- Modo oscuro automático
 
 ### ✅ **Formulario de Contacto Profesional**
 - Validación en tiempo real
 - Feedback visual y mensajes de error/éxito
 - Integración con Google Analytics
 - Campos para presupuesto y tipo de servicio
+- Accesibilidad completa (ARIA, focus states)
+- Incluye el nuevo servicio de Soporte IT
 
-### ✅ **Diseño Responsive**
+### ✅ **Diseño Responsive Avanzado**
 - Adaptable a todos los dispositivos
-- Breakpoints optimizados
+- Breakpoints optimizados (320px, 360px, 480px, 768px, 1200px)
 - Experiencia consistente
+- Grid layouts flexibles
+- Imágenes responsivas
 
 ### ✅ **Performance Optimizado**
 - Preload de recursos críticos
 - Service Worker para cache
 - Optimización de imágenes
 - Carga rápida
+- Lazy loading implementado
 
-### ✅ **Accesibilidad**
+### ✅ **Accesibilidad WCAG 2.1**
 - Navegación por teclado
-- Focus styles
+- Focus styles mejorados
 - Estructura semántica
 - Screen reader friendly
+- Skip links implementados
+- ARIA labels y roles
+- Contraste optimizado
+
+### ✅ **Portfolio de Proyectos**
+- Grid responsive optimizado
+- Proyectos destacados
+- Tecnologías utilizadas
+- Enlaces a demos en vivo
+- Imágenes optimizadas
+- Efectos hover elegantes
 
 ## 🛠️ Tecnologías Utilizadas
 
 - **HTML5** - Estructura semántica
-- **CSS3** - Estilos y animaciones
-- **JavaScript (ES6+)** - Interactividad
+- **CSS3** - Estilos, animaciones y Grid/Flexbox
+- **JavaScript (ES6+)** - Interactividad y validaciones
 - **Service Worker** - Funcionalidad offline
 - **PWA** - Progressive Web App
 - **Google Analytics** - Tracking y analytics
+- **FontAwesome** - Iconografía
+- **CSS Variables** - Sistema de diseño
 
 ## 📱 Servicios Ofrecidos
 
@@ -114,24 +156,42 @@ webXpert/
 - Sitios corporativos profesionales
 - Tiendas online (e-commerce)
 - Aplicaciones web personalizadas
+- Diseño responsive y moderno
 
 ### 🔍 **SEO (Search Engine Optimization)**
 - Auditoría SEO completa
 - Optimización on-page y off-page
 - Investigación de palabras clave
 - Monitoreo de rankings
+- Mejora de visibilidad orgánica
 
 ### 📱 **Gestión de Redes Sociales**
 - Estrategias de contenido
 - Gestión de comunidades
 - Publicidad en redes sociales
 - Análisis de métricas
+- Creación de contenido visual
 
 ### 🗄️ **Administración de Bases de Datos**
 - Auditoría de rendimiento
 - Mantenimiento preventivo
 - Backup y recuperación
 - Migración y actualización
+- Optimización de consultas
+
+### 🔧 **Auditoría Web**
+- Análisis de rendimiento
+- Optimización de velocidad
+- Revisión de seguridad
+- Mejoras de UX/UI
+- Reportes detallados
+
+### 💻 **Soporte IT**
+- Soporte técnico para desktop y notebooks
+- Configuración y mantenimiento de impresoras
+- Instalación y configuración de redes LAN
+- Configuración de WiFi empresarial
+- Resolución de problemas técnicos
 
 ## 🚀 Instalación y Uso
 
@@ -167,49 +227,66 @@ El sitio incluye Google Analytics para:
 - Análisis de comportamiento
 - Medición de conversiones
 - Eventos personalizados
+- Análisis de formularios
 
-**Nota:** Reemplaza `GA_MEASUREMENT_ID` con tu ID real de Google Analytics.
+**ID de Google Analytics:** G-TWEYH8CRZG
 
 ## 🔧 Configuración
 
 ### **Google Analytics**
-1. Crea una cuenta en [Google Analytics](https://analytics.google.com/)
-2. Obtén tu ID de medición
-3. Reemplaza `GA_MEASUREMENT_ID` en todos los archivos HTML
+- ✅ Configurado con ID: G-TWEYH8CRZG
+- ✅ Eventos de formulario implementados
+- ✅ Tracking de páginas configurado
 
 ### **Formulario de Contacto**
-1. Configura [Formspree](https://formspree.io/) o tu propio backend
-2. Actualiza la URL del formulario en `pages/contacto.html`
+- ✅ Configurado con validación en tiempo real
+- ✅ Incluye todos los servicios (incluyendo Soporte IT)
+- ✅ Mensajes de error/éxito implementados
+- ✅ Accesibilidad completa
 
 ### **Service Worker**
-- El Service Worker está configurado para cachear recursos estáticos
-- Se actualiza automáticamente cuando cambias la versión en `CACHE_NAME`
+- ✅ Configurado para cachear recursos estáticos
+- ✅ Se actualiza automáticamente
+- ✅ Funcionalidad offline básica
 
 ## 📈 SEO y Marketing
 
 ### **Meta Tags Optimizados**
-- Títulos únicos y descriptivos
-- Descripciones atractivas
-- Palabras clave relevantes
-- Open Graph para redes sociales
+- ✅ Títulos únicos y descriptivos
+- ✅ Descripciones atractivas
+- ✅ Palabras clave relevantes
+- ✅ Open Graph para redes sociales
+- ✅ Twitter Cards implementadas
 
 ### **Sitemap y Robots**
-- Sitemap.xml actualizado automáticamente
-- Robots.txt configurado para SEO
-- URLs amigables y estructuradas
+- ✅ Sitemap.xml actualizado con todas las páginas
+- ✅ Robots.txt optimizado para SEO
+- ✅ URLs amigables y estructuradas
+- ✅ Incluye páginas de servicios y legales
+
+### **Schema.org**
+- ✅ Datos estructurados implementados
+- ✅ Información de organización
+- ✅ Datos de contacto
+- ✅ Información de servicios
 
 ## 🔒 Seguridad y Privacidad
 
-- Política de privacidad completa
-- Términos de servicio detallados
-- Cumplimiento GDPR básico
-- Validación de formularios robusta
+- ✅ Política de privacidad completa
+- ✅ Términos de servicio detallados
+- ✅ Cumplimiento GDPR básico
+- ✅ Validación de formularios robusta
+- ✅ Aviso de cookies implementado
 
 ## 📞 Contacto
 
 - **Email:** julioapintos1@gmail.com
 - **Teléfono:** +54 9 3764724207
 - **Ubicación:** Posadas, Misiones, Argentina
+- **Redes Sociales:**
+  - Facebook: [julioapintos](https://www.facebook.com/julioapintos)
+  - Instagram: [julioapintos](https://www.instagram.com/julioapintos/)
+  - LinkedIn: [julio-pintos](https://www.linkedin.com/in/julio-pintos-0638a8200/)
 
 ## 📄 Licencia
 
@@ -226,6 +303,23 @@ Para contribuir al proyecto:
 
 ## 📝 Changelog
 
+### v1.2.0 (2025-01-27) - **ESTADO ACTUAL**
+- ✅ **Nuevo servicio de Soporte IT** agregado
+- ✅ **Responsive design mejorado** para proyectos
+- ✅ **Estilos de páginas legales** completados
+- ✅ **Accesibilidad mejorada** con skip links
+- ✅ **SEO optimizado** con preconnect y schema.org
+- ✅ **Sistema de diseño** completamente implementado
+- ✅ **PWA mejorada** con shortcuts
+- ✅ **Formulario de contacto** actualizado con nuevo servicio
+
+### v1.1.0 (2025-01-27)
+- ✅ Auditoría SEO completa implementada
+- ✅ Accesibilidad WCAG 2.1 mejorada
+- ✅ Performance optimizada
+- ✅ Rich snippets implementados
+- ✅ Focus states mejorados
+
 ### v1.0.0 (2025-01-27)
 - ✅ Reorganización completa del proyecto
 - ✅ Implementación de PWA
@@ -237,24 +331,56 @@ Para contribuir al proyecto:
 
 ---
 
+## 🎯 **Estado Actual del Proyecto**
+
+### ✅ **COMPLETADO Y FUNCIONANDO:**
+- **Sitio web profesional** con diseño moderno y responsive
+- **SEO completo** con meta tags, sitemap, robots.txt y schema.org
+- **PWA configurada** con manifest, service worker y shortcuts
+- **Accesibilidad WCAG 2.1** con ARIA, focus states, skip links
+- **6 servicios implementados** con páginas dedicadas
+- **Portfolio de proyectos** con responsive optimizado
+- **Formulario de contacto** con validación y accesibilidad
+- **Sistema de diseño CSS** completo y coherente
+- **Páginas legales** con estilos profesionales
+- **Responsive design** optimizado para todos los dispositivos
+
+### 🚀 **LISTO PARA PRODUCCIÓN:**
+- ✅ Funciona correctamente en todos los navegadores
+- ✅ SEO optimizado y indexable
+- ✅ Responsive completo para móviles
+- ✅ Accesibilidad cumpliendo estándares
+- ✅ PWA instalable como app
+- ✅ Performance optimizada
+- ✅ Seguridad básica implementada
+
 **Desarrollado con ❤️ por webXpert**
 
-## Archivos de configuración
+---
 
-Asegúrate de que los siguientes archivos estén en la raíz del proyecto para un funcionamiento óptimo:
+## 📋 **Notas Técnicas**
 
-- `sitemap.xml`
-- `robots.txt`
-- `sw.js`
-- `manifest.json`
+### **Archivos de configuración**
+Asegúrate de que los siguientes archivos estén en la raíz del proyecto:
+- `sitemap.xml` - Sitemap actualizado
+- `robots.txt` - Configuración SEO
+- `sw.js` - Service Worker
+- `manifest.json` - Configuración PWA
 
-## Accesibilidad
-- Todas las imágenes deben tener atributos `alt` descriptivos.
-- Los colores deben cumplir con los estándares de contraste WCAG.
+### **Accesibilidad**
+- ✅ Todas las imágenes tienen atributos `alt` descriptivos
+- ✅ Los colores cumplen con los estándares de contraste WCAG
+- ✅ Navegación por teclado implementada
+- ✅ Skip links para accesibilidad
 
-## SEO
-- Cada página debe tener etiquetas `<title>` y `<meta name="description">` únicas y descriptivas.
-- Agrega etiquetas Open Graph si es posible.
+### **SEO**
+- ✅ Cada página tiene etiquetas `<title>` y `<meta name="description">` únicas
+- ✅ Open Graph y Twitter Cards implementadas
+- ✅ Schema.org para datos estructurados
+- ✅ URLs amigables y estructura semántica
 
-## Cookies y RGPD
-- Si usas Google Analytics o cookies, incluye un aviso de cookies y solicita consentimiento al usuario. 
+### **Cookies y RGPD**
+- ✅ Aviso de cookies implementado
+- ✅ Política de privacidad completa
+- ✅ Términos de servicio detallados
+- ✅ Cumplimiento básico de RGPD 
