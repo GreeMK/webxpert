@@ -229,12 +229,12 @@ El sitio incluye Google Analytics para:
 - Eventos personalizados
 - Análisis de formularios
 
-**ID de Google Analytics:** G-TWEYH8CRZG
+**ID de Google Analytics:** G-2YLNSWEFHC
 
 ## 🔧 Configuración
 
 ### **Google Analytics**
-- ✅ Configurado con ID: G-TWEYH8CRZG
+- ✅ Configurado con ID: G-2YLNSWEFHC
 - ✅ Eventos de formulario implementados
 - ✅ Tracking de páginas configurado
 
